@@ -1,0 +1,25 @@
+*{
+        margin: 0;
+        padding: 0;
+    }
+.head{
+        color: black;
+        width: 80%;
+        margin: auto;
+        }
+.oldcomments{
+    border: 1px solid black;
+    margin-bottom: 10px;
+    }
+.subtitle{
+    margin-bottom: 10px;
+    font-weight: bold
+}
+.newcomment{
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+.main {
+    width: 80%;
+    margin: auto;
+}
