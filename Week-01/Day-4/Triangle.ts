@@ -18,5 +18,5 @@ for(i=1;i<=lineCount;i++){
         line=line+"*";
     }
     console.log(line);
-    line="";
+    line=""
 }
