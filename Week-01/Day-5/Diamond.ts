@@ -1,12 +1,8 @@
 'use strict';
 
 let lineCount: number = 11;
-let i: number = 0;
-let x: number = 0;
-let y: number = 0;
 let maxline: number = 0;
 let line: string = "";
-let lineü: string = "";
 
 // Write a program that draws a
 // diamond like this:
@@ -24,38 +20,36 @@ let lineü: string = "";
 maxline = Math.ceil(lineCount / 2);
 //console.log(maxline);
 
-for (i = 1; i <= maxline; i++) {
-    for (y = (maxline - i - 1); y >= 0; y--) {
-        lineü = lineü + " ";
+for (let i: number = 1; i <= maxline; i++) {
+    for (let y: number = (maxline - i - 1); y >= 0; y--) {
+        line = line + " ";
     }
-    for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
+    for (let x: number = 1; x <= ((i - 1) * 2 + 1); x++) {
         line = line + "*";
     }
-    console.log(lineü + line);
+    console.log(line);
     line = "";
-    lineü = "";
+
 }
 if (lineCount % 2 === 0) {
-    for (i = (lineCount - maxline); i >= 0; i--) {
-        for (y = 0; y < (lineCount - maxline - i); y++) {
-            lineü = lineü + " ";
+    for (let i: number = (lineCount - maxline); i > 0; i--) {
+        for (let y: number = 0; y < (lineCount - maxline - i); y++) {
+            line = line + " ";
         }
-        for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
+        for (let x: number = 1; x <= ((i - 1) * 2 + 1); x++) {
             line = line + "*";
         }
-        console.log(lineü + line);
+        console.log(line);
         line = "";
-        lineü = "";
     }
 } else
-    for (i = (lineCount - maxline); i >= 0; i--) {
-        for (y = 0; y <= (lineCount - maxline - i); y++) {
-            lineü = lineü + " ";
+    for (let i: number = (lineCount - maxline); i > 0; i--) {
+        for (let y: number = 0; y <= (lineCount - maxline - i); y++) {
+            line = line + " ";
         }
-        for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
+        for (let x: number = 1; x <= ((i - 1) * 2 + 1); x++) {
             line = line + "*";
         }
-        console.log(lineü + line);
+        console.log(line);
         line = "";
-        lineü = "";
-    }       
+    }
