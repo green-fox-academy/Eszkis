@@ -1,7 +1,6 @@
 'use strict';
 
-let lineCount: number = 9
-;
+let lineCount: number = 11;
 let i: number = 0;
 let x: number = 0;
 let y: number = 0;
@@ -36,27 +35,27 @@ for (i = 1; i <= maxline; i++) {
     line = "";
     lineü = "";
 }
-if(lineCount%2===0){
- for (i = (lineCount-maxline); i >=0; i--) {
-    for (y =0 ; y < (lineCount-maxline-i); y++) {
-        lineü = lineü + " ";
+if (lineCount % 2 === 0) {
+    for (i = (lineCount - maxline); i >= 0; i--) {
+        for (y = 0; y < (lineCount - maxline - i); y++) {
+            lineü = lineü + " ";
+        }
+        for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
+            line = line + "*";
+        }
+        console.log(lineü + line);
+        line = "";
+        lineü = "";
     }
-    for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
-        line = line + "*";
-    }
-    console.log(lineü + line);
-    line = "";
-    lineü = "";
- }
 } else
-for (i = (lineCount-maxline); i >=0; i--) {
-    for (y =0 ; y <= (lineCount-maxline-i); y++) {
-        lineü = lineü + " ";
-    }
-    for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
-        line = line + "*";
-    }
-    console.log(lineü + line);
-    line = "";
-    lineü = "";
- }
+    for (i = (lineCount - maxline); i >= 0; i--) {
+        for (y = 0; y <= (lineCount - maxline - i); y++) {
+            lineü = lineü + " ";
+        }
+        for (x = 1; x <= ((i - 1) * 2 + 1); x++) {
+            line = line + "*";
+        }
+        console.log(lineü + line);
+        line = "";
+        lineü = "";
+    }       
