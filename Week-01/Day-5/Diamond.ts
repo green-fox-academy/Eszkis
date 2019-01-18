@@ -1,6 +1,7 @@
 'use strict';
 
-let lineCount: number = 10;
+let lineCount: number = 9
+;
 let i: number = 0;
 let x: number = 0;
 let y: number = 0;
