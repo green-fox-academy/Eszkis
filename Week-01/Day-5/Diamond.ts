@@ -1,6 +1,7 @@
 'use strict';
 
-let lineCount: number = 11;
+let lineCount: number = 80
+;
 let maxline: number = 0;
 let line: string = "";
 
