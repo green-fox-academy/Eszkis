@@ -21,9 +21,10 @@
 let operat = process.argv[2];
 let numb1 = parseInt(process.argv[3]);
 let numb2 = parseInt(process.argv[4]);
+console.log('Your arguments: '+operat+' '+numb1+' '+numb2)
 
-if ((numb1 !== numb1 || numb2 !== numb2) && operat !== '+' && operat !== '-' && operat !== '\*' && operat !== '\u002F' && operat !== '%') {
-  console.log('One of arguments are invalid. Please start the program again, and give right arguments')
+if ((numb1 !== numb1 || numb2 !== numb2) && operat !== '+' && operat !== '-' && operat !== 'm' && operat !== 'd' && operat !== '%') {
+  console.log('One of arguments are invalid. Please start the program again, and give right arguments. *=m, /=d')
 } else {
   switch (operat) {
     case '+':
@@ -34,11 +35,11 @@ if ((numb1 !== numb1 || numb2 !== numb2) && operat !== '+' && operat !== '-' && 
       console.log('Result: ' + (numb1 - numb2));
       console.log('Goodbye');
       break;
-    case '\*':
+    case 'm':
       console.log('Result: ' + (numb1 * numb2));
       console.log('Goodbye');
       break;
-    case '\u002F':
+    case 'd':
       console.log('Result: ' + (numb1 / numb2));
       console.log('Goodbye');
       break;
