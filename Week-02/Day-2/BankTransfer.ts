@@ -39,15 +39,23 @@ function getNameAndBalance(array: any[], accNumb: number) {
 }
 
 function trnsfer(array: any[], acc1: number, acc2: number, transmoney: number) {
-  array.forEach(function (findaccs) {
-    if (findaccs.accountNumber === acc1) {
-      findaccs.balance -= transmoney;
-    } else if (findaccs.accountNumber === acc2) {
-      findaccs.balance += transmoney;
-    } else {
-    }
-  });
-  return array;
+  let accountnumbs:number[]=[];
+  array.forEach(function(getAccNumbs){
+    accountnumbs.push(getAccNumbs.accountNumber);
+  })
+  if(accountnumbs.indexOf(acc1)===-1 ||accountnumbs.indexOf(acc2)===-1 ){
+    return '404 - account not found'
+  } else {
+    array.forEach(function (findaccs) {
+      if (findaccs.accountNumber === acc1) {
+        findaccs.balance -= transmoney;
+      } else if (findaccs.accountNumber === acc2) {
+        findaccs.balance += transmoney;
+      } else {
+      }
+    });
+    return array;
+  }
 }
 
 let acc1:number=43546731;
