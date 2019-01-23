@@ -15,4 +15,4 @@ function purpleSteps(stepNumber: number, size:number) {
   }
 }
 
-purpleSteps(30,10);
+purpleSteps(5,50);
