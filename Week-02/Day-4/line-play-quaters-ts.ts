@@ -26,4 +26,4 @@ function LinePlayQuaters(stepSize: number, quaterNumber: number) {
   }
 }
 
-LinePlayQuaters(5, 4);
+LinePlayQuaters(5, 100);

@@ -38,4 +38,4 @@ function LinePlay(stepSize: number) {
   }
 }
 
-LinePlay(5);
+LinePlay(10);
