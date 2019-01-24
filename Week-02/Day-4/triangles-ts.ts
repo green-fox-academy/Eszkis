@@ -9,9 +9,7 @@ function triangles(stepSize: number, maxSize: number, color: string = rgb) {
   const triangleHight: number = Math.sin(Math.PI / 3) * stepSize;
   const widhtMod: number = (canvas.width - maxSize * stepSize) / 2;
   const heightMod: number = (canvas.height - maxSize * triangleHight) / 2;
-
   for (let lineIn: number = 0; lineIn <= maxSize; lineIn++) {
-
     for (let x: number = 0; x <= (maxSize - lineIn) - 1; x++) {
       ctx.beginPath();
       ctx.strokeStyle = color;
@@ -24,11 +22,11 @@ function triangles(stepSize: number, maxSize: number, color: string = rgb) {
   }
 }
 
-const red: number = Math.floor(Math.random() * 256);
-const green: number = Math.floor(Math.random() * 256);
-const blue: number = Math.floor(Math.random() * 256);
-const rgb: string = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+const red: string = Math.floor(Math.random() * 256).toString();
+const green: string = Math.floor(Math.random() * 256).toString();
+const blue: string = Math.floor(Math.random() * 256).toString();
+const rgb: string = 'rgb('.concat(red, ', ', green, ', ', blue, ')');
 
-triangles(20, 20,);
+triangles(20, 20);
 
 
