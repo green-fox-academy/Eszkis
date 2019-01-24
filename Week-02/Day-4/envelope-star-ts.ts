@@ -5,25 +5,37 @@ const ctx = canvas.getContext('2d');
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 
-function LinePlay(stepSize: number, quaterNumber: number) {
-  for (let moveY: number = 0; moveY < canvas.height; moveY += ((canvas.height / Math.sqrt(quaterNumber)))) {
-    for (let moveX: number = 0; moveX < canvas.width; moveX += ((canvas.width / Math.sqrt(quaterNumber)))) {
-      for (let drawX = 0; drawX < (canvas.height / Math.sqrt(quaterNumber)); drawX += stepSize) {
-        ctx.strokeStyle = "darkred";
-        ctx.beginPath();
-        ctx.moveTo(moveX, moveY + drawX);
-        ctx.lineTo(moveX + drawX, moveY + (canvas.height / (Math.sqrt(quaterNumber))));
-        ctx.stroke();
-      }
-      for (let drawY = 0; drawY < (canvas.width / Math.sqrt(quaterNumber)); drawY += stepSize) {
-        ctx.strokeStyle = "green";
-        ctx.beginPath();
-        ctx.moveTo(moveX + drawY, moveY);
-        ctx.lineTo(moveX + (canvas.width / Math.sqrt(quaterNumber)), moveY + drawY);
-        ctx.stroke();
-      }
-    }
+function LinePlay(stepSize: number) {
+  let size: number = canvas.height / 2
+
+  for (let draw = 0; draw < (canvas.height / 2); draw += stepSize) {
+    ctx.strokeStyle = "darkred";
+    ctx.beginPath();
+    ctx.moveTo(draw, size);
+    ctx.lineTo(size, size - draw);
+    ctx.stroke();
+  }
+  for (let draw = 0; draw < (canvas.width / 2); draw += stepSize) {
+    ctx.strokeStyle = "darkred";
+    ctx.beginPath();
+    ctx.moveTo(size, draw);
+    ctx.lineTo(size + draw, size);
+    ctx.stroke();
+  }
+  for (let draw = 0; draw < (canvas.height / 2); draw += stepSize) {
+    ctx.strokeStyle = "darkred";
+    ctx.beginPath();
+    ctx.moveTo(size * 2 - draw, size);
+    ctx.lineTo(size, size + draw);
+    ctx.stroke();
+  }
+  for (let draw = 0; draw < (canvas.width / 2); draw += stepSize) {
+    ctx.strokeStyle = "darkred";
+    ctx.beginPath();
+    ctx.moveTo(size, size * 2 - draw);
+    ctx.lineTo(size - draw, size);
+    ctx.stroke();
   }
 }
 
-LinePlay(5, 4);
+LinePlay(5);
