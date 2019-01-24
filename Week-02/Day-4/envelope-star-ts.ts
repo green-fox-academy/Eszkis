@@ -5,7 +5,7 @@ const ctx = canvas.getContext('2d');
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 
-function LinePlayQuaters(stepSize: number, quaterNumber: number) {
+function LinePlay(stepSize: number, quaterNumber: number) {
   for (let moveY: number = 0; moveY < canvas.height; moveY += ((canvas.height / Math.sqrt(quaterNumber)))) {
     for (let moveX: number = 0; moveX < canvas.width; moveX += ((canvas.width / Math.sqrt(quaterNumber)))) {
       for (let drawX = 0; drawX < (canvas.height / Math.sqrt(quaterNumber)); drawX += stepSize) {
@@ -26,4 +26,4 @@ function LinePlayQuaters(stepSize: number, quaterNumber: number) {
   }
 }
 
-LinePlayQuaters(5, 4);
+LinePlay(5, 4);
