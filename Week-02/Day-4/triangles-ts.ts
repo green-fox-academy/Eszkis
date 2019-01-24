@@ -27,6 +27,6 @@ const green: string = Math.floor(Math.random() * 256).toString();
 const blue: string = Math.floor(Math.random() * 256).toString();
 const rgb: string = 'rgb('.concat(red, ', ', green, ', ', blue, ')');
 
-triangles(20, 20);
+triangles(10, 40);
 
 
