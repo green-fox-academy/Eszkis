@@ -12,23 +12,47 @@ function randomColor() {
   return 'rgb('.concat(r(), ', ', r(), ', ', r(), ')');
 }
 
-function superHexagon(stepSize: number, layerNumber: number, color: string = randomColor()) {
-  const hexagonWidht: number = Math.sin(Math.PI / 3) * stepSize;
-  const center:number=(canvas.height-stepSize)/2;
-  ctx.beginPath();
-  ctx.strokeStyle = color;
-  ctx.moveTo(0 + center, 0 + center);
-  ctx.lineTo(0 + center, stepSize + center);
-  ctx.lineTo(hexagonWidht + center, stepSize * 1.5 + center);
-  ctx.lineTo(hexagonWidht * 2 + center, stepSize + center);
-  ctx.lineTo(hexagonWidht * 2 + center, 0 + center);
-  ctx.lineTo(hexagonWidht + center, center - stepSize * 0.5);
-  ctx.closePath();
-  ctx.stroke();
+function superHexagon(stepSize: number, layerNumber: number, colorStyle: boolean = false, color: string = randomColor()) {
+  const hexagonHeight: number = Math.sin(Math.PI / 3) * stepSize;
+  const loopWidhtMod: number = 1.5 * stepSize * (layerNumber);
+  const loopHeightMod: number = hexagonHeight * (layerNumber)
+  const widhtmod: number = (canvas.width - 2 * stepSize * (layerNumber - 1) * 1.5) / 2;
+  const heightmod: number = (canvas.height + (1 - layerNumber) * 2 * hexagonHeight) / 2;
 
+  for (let lineGrow: number = 0; lineGrow < layerNumber; lineGrow++) {
+    for (let hexagonGrow: number = 0; hexagonGrow < Math.min(layerNumber + lineGrow, (layerNumber - 1) * 2 + 1); hexagonGrow++) {
+      if (colorStyle === true) {
+        color = randomColor()
+      }
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.moveTo(widhtmod + (1.5 * lineGrow - 1) * stepSize, heightmod + (2 * hexagonGrow - lineGrow) * hexagonHeight);
+      ctx.lineTo(widhtmod + (1.5 * lineGrow - 0.5) * stepSize, heightmod + (2 * hexagonGrow + 1 - lineGrow) * hexagonHeight);
+      ctx.lineTo(widhtmod + (1.5 * lineGrow + 0.5) * stepSize, heightmod + (2 * hexagonGrow + 1 - lineGrow) * hexagonHeight);
+      ctx.lineTo(widhtmod + (1.5 * lineGrow + 1) * stepSize, heightmod + (2 * hexagonGrow - lineGrow) * hexagonHeight);
+      ctx.lineTo(widhtmod + (1.5 * lineGrow + 0.5) * stepSize, heightmod - (1 - 2 * hexagonGrow + lineGrow) * hexagonHeight);
+      ctx.lineTo(widhtmod + (1.5 * lineGrow - 0.5) * stepSize, heightmod - (1 - 2 * hexagonGrow + lineGrow) * hexagonHeight);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
+  for (let lineLess: number = 0; lineLess < (layerNumber - 1); lineLess++) {
+    for (let hexagonLess: number = 0; hexagonLess < ((layerNumber - 1) * 2 - lineLess); hexagonLess++) {
+      if (colorStyle === true) {
+        color = randomColor()
+      }
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.moveTo(widhtmod + (1.5 * lineLess - 1) * stepSize + loopWidhtMod, heightmod + (2 * (1 + hexagonLess) + lineLess) * hexagonHeight - loopHeightMod);
+      ctx.lineTo(widhtmod + (1.5 * lineLess - 0.5) * stepSize + loopWidhtMod, heightmod + (2 * (1 + hexagonLess) + 1 + lineLess) * hexagonHeight - loopHeightMod);
+      ctx.lineTo(widhtmod + (1.5 * lineLess + 0.5) * stepSize + loopWidhtMod, heightmod + (2 * (1 + hexagonLess) + 1 + lineLess) * hexagonHeight - loopHeightMod);
+      ctx.lineTo(widhtmod + (1.5 * lineLess + 1) * stepSize + loopWidhtMod, heightmod + (2 * (1 + hexagonLess) + lineLess) * hexagonHeight - loopHeightMod);
+      ctx.lineTo(widhtmod + (1.5 * lineLess + 0.5) * stepSize + loopWidhtMod, heightmod - (1 - 2 * (1 + hexagonLess) - lineLess) * hexagonHeight - loopHeightMod);
+      ctx.lineTo(widhtmod + (1.5 * lineLess - 0.5) * stepSize + loopWidhtMod, heightmod - (1 - 2 * (1 + hexagonLess) - lineLess) * hexagonHeight - loopHeightMod);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
 }
 
-
-superHexagon(20, 2);
-
-
+superHexagon(10, 3,true);
