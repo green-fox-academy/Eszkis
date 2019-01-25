@@ -5,6 +5,8 @@ const ctx = canvas.getContext('2d');
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 
+//chose how to color th hexagon(1 color, different color for every circle, each of the different)
+
 function randomColor() {
   const r = function () { return Math.floor(Math.random() * 256).toString() };
   return 'rgb('.concat(r(), ', ', r(), ', ', r(), ')');
