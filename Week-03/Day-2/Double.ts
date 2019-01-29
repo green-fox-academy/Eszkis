@@ -18,7 +18,7 @@ function double(fileName: string) {
     }
   }
   console.log(sentences);
-  
+
 }
 
 
