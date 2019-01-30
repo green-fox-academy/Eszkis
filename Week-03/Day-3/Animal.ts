@@ -38,5 +38,4 @@ cat.eat()
 cat.drink()
 console.log(cat);
 cat.play()
-cat.play()
 console.log(cat);
