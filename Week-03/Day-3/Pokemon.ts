@@ -13,7 +13,7 @@ class Counter {
   value: number;
   originalValue: number;
 
-  constructor(originalValueInput = 0) {
+  constructor(originalValueInput) {
     this.originalValue = originalValueInput;
     this.value = originalValueInput;
   }
@@ -31,7 +31,7 @@ class Counter {
   }
 }
 
-let Counter1 = new Counter(5);
+let Counter1=new Counter(5);
 
 Counter1.get();
 Counter1.add();
