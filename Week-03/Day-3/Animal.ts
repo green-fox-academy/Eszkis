@@ -31,11 +31,5 @@ class Animal {
   }
 }
 
-let cat=new Animal;
 
-console.log(cat);
-cat.eat()
-cat.drink()
-console.log(cat);
-cat.play()
-console.log(cat);
+export{Animal};
