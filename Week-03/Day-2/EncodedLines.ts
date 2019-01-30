@@ -15,8 +15,9 @@ function reversedLines(fileName: string) {
     for (let y: number = 0; y < array[x].length; y++) {
       if (array[x][y] === '\n' || array[x][y] === ' ') {
         sentences += array[x][y]
+      } else {
+        sentences += String.fromCharCode(array[x][y].charCodeAt(0) - 1)
       }
-      sentences += String.fromCharCode(array[x][y].charCodeAt(0) - 1)
     }
   }
   console.log(sentences);
