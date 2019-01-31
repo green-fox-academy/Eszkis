@@ -29,13 +29,9 @@ function hexagon(size: number, x: number, y: number, color = randomColor()) {
   if (size > 10) {
     color = randomColor()
     setTimeout(function () {
-      hexagon(size / 2, x - 0.25 * size, y - 0.5 * hexagonHeight, color)
-    }, 500);
-    setTimeout(function () {
-      hexagon(size / 2, x - 0.25 * size, y + 0.5 * hexagonHeight, color)
-    }, 500);
-    setTimeout(function () {
-      hexagon(size / 2, x + size / 2, y, color)
+      hexagon(size / 2, x - 0.25 * size, y - 0.5 * hexagonHeight, color);   
+      hexagon(size / 2, x - 0.25 * size, y + 0.5 * hexagonHeight, color);
+      hexagon(size / 2, x + size / 2, y, color);
     }, 500);
   }
 }
