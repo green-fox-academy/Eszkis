@@ -3,7 +3,7 @@
 function switchX(string) {
   if (string === '') {
     return ''
-  } else if (string.substr(0, 1) === 'x'||string.substr(0, 1) === 'X') {
+  } else if (string.substr(0, 1) === 'x' || string.substr(0, 1) === 'X') {
     return ('' + switchX(string.substr(1)));
   } else {
     return string.substr(0, 1) + switchX(string.substr(1))
