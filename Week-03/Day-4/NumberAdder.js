@@ -4,7 +4,7 @@ function counter(startNumber) {
   if (startNumber <=1) {
     return 1
   } else {
-    return startNumber += counter(startNumber - 1)
+    return startNumber + counter(startNumber - 1)
   }
 }
 
