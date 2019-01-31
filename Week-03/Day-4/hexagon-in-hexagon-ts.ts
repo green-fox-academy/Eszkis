@@ -28,10 +28,15 @@ function hexagon(size: number, x: number, y: number, color = randomColor()) {
   ctx.stroke();
   if (size > 10) {
     color = randomColor()
-    hexagon(size / 2, x - 0.25 * size, y - 0.5 * hexagonHeight, color)
-    hexagon(size / 2, x - 0.25 * size, y + 0.5 * hexagonHeight, color)
-    hexagon(size / 2, x + size / 2, y, color)
+    setTimeout(function () {
+      hexagon(size / 2, x - 0.25 * size, y - 0.5 * hexagonHeight, color)
+    }, 500);
+    setTimeout(function () {
+      hexagon(size / 2, x - 0.25 * size, y + 0.5 * hexagonHeight, color)
+    }, 500);
+    setTimeout(function () {
+      hexagon(size / 2, x + size / 2, y, color)
+    }, 500);
   }
 }
-
 hexagon(150, (canvas.width) / 2, canvas.height / 2);
