@@ -1,19 +1,23 @@
 'use strict'
 
-class Flower {
+class plants {
   type: string;
   currentWater: number;
   needWater: boolean;
+  waterNeedLimit: number;
+  usePercente: number;
 
-  constructor(typeInput: string) {
+  constructor(typeInput: string, currentWaterInput: number, waterNeedLimitInput: number, usePerteceInput: number) {
     this.type = typeInput;
-    this.currentWater = 10;
+    this.currentWater = currentWaterInput;
     this.needWater = true;
+    this.waterNeedLimit = waterNeedLimitInput;
+    this.usePercente = usePerteceInput;
   }
 
   water(waterAmmount: number) {
-    this.currentWater -= waterAmmount * 0.75;
-    if (this.currentWater > 5) {
+    this.currentWater -= waterAmmount * this.usePercente;
+    if (this.currentWater > this.waterNeedLimit) {
       this.needWater = true;
     } else {
       this.needWater = false;
@@ -21,24 +25,17 @@ class Flower {
   }
 }
 
-class Tree {
-  type: string;
-  currentWater: number;
-  needWater: boolean;
+class Flower extends (plants) {
 
-  constructor(typeInput: string) {
-    this.type = typeInput;
-    this.currentWater = 25;
-    this.needWater = true;
+  constructor(typeInput: string, currentWaterInput: number, waterNeedLimitInput: number, usePerteceInput: number) {
+    super(typeInput, currentWaterInput, waterNeedLimitInput, usePerteceInput)
   }
+}
 
-  water(waterAmmount: number) {
-    this.currentWater -= waterAmmount * 0.4;
-    if (this.currentWater > 10) {
-      this.needWater = true;
-    } else {
-      this.needWater = false;
-    }
+class Tree extends (plants) {
+
+  constructor(typeInput: string, currentWaterInput: number, waterNeedLimitInput: number, usePerteceInput: number) {
+    super(typeInput, currentWaterInput, waterNeedLimitInput, usePerteceInput)
   }
 }
 
@@ -71,10 +68,10 @@ class Garden {
   }
 }
 
-let flower1 = new Flower('yellow');
-let flower2 = new Flower('blue');
-let tree1 = new Tree('purple');
-let tree2 = new Tree('orange');
+let flower1 = new Flower('Yellow', 10, 5, 0.76);
+let flower2 = new Flower('Blue', 10, 5, 0.76);
+let tree1 = new Tree('Purple', 25, 10, 0.4);
+let tree2 = new Tree('Orange', 25, 10, 0.4);
 let garden1 = new Garden;
 
 garden1.flowers.push(flower1);
