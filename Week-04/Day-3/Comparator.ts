@@ -27,7 +27,6 @@ let dominoes = initializeDominoes();
 console.log('Original order');
 print(dominoes);
 dominoes.sort(function (a: Domino, b: Domino) {
-  console.log(`${a.values} and ${b.values} compered`);
   return a.compareTo(b);
 });
 console.log('Sorted order');

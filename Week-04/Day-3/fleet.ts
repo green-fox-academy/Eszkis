@@ -1,7 +1,7 @@
 import { Thing } from "./thing";
 
 class Fleet {
-    private things: Thing[];
+    things: Thing[];
 
     constructor() {
         this.things = [];

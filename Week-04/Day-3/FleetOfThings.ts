@@ -20,6 +20,15 @@ fleet.add(thing3);
 fleet.add(thing2);
 fleet.add(thing4);
 fleet.add(thing1);
+console.log('Original order');
 fleet.print();
+fleet.things.sort(function (a: Thing, b: Thing) {
+  return a.stringCompareTo(b);
+});
+fleet.print();
+fleet.things.sort(function (a: Thing, b: Thing) {
+  return a.statusCompareTo(b);
+});
+console.log('Sorted order');
 
 fleet.print();
