@@ -1,4 +1,4 @@
-class Thing implements Comparable {
+class Thing implements Comparable, Printable {
     private name: string;
     private completed: boolean;
 
@@ -36,6 +36,13 @@ class Thing implements Comparable {
         }
 
     }
+    printAllFields() {
+        let info: any = {
+            name: this.name,
+            completed: this.completed
+        }
+        return info
+    }
 }
 
 interface Comparable {
@@ -46,6 +53,10 @@ interface Comparable {
     * returns positive number if this is greater than other
     */
     stringCompareTo(other: Comparable): number
+}
+
+interface Printable {
+    printAllFields(): any;
 }
 
 

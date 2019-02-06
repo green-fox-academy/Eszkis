@@ -31,3 +31,4 @@ dominoes.sort(function (a: Domino, b: Domino) {
 });
 console.log('Sorted order');
 print(dominoes);
+dominoes.forEach(elements => console.log(elements.printAllFields()));

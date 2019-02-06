@@ -32,3 +32,4 @@ fleet.things.sort(function (a: Thing, b: Thing) {
 console.log('Sorted order');
 
 fleet.print();
+fleet.things.forEach(element => console.log(element.printAllFields()));

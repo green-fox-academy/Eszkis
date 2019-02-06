@@ -13,6 +13,13 @@ class Domino implements Comparable {
             return 0
         }
     }
+
+    printAllFields() {
+        let info: any = {
+            values: this.values
+        }
+        return info
+    }
 }
 
 interface Comparable {
@@ -22,6 +29,10 @@ interface Comparable {
     * returns 0 if they are the same
     * returns positive number if this is greater than other
     */
+}
+
+interface Printable {
+    printAllFields(): any;
 }
 
 export { Domino };
