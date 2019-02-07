@@ -50,7 +50,7 @@ test("is vowel: k", function (t: any): any {
 });
 
 test('translate: integet', function (t: any): any {
-  t.equal(translate('integet'), 'vave');
+  t.equal(translate('integet'), 'wave');
   t.end();
 });
 
