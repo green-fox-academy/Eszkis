@@ -4,7 +4,10 @@ let test = require('tape')
 
 test('Sum a list of number', t => {
   const listOfNumbers = new Sum;
-  listOfNumbers.addNumber(null);
-  t.equal(listOfNumbers.sumNumber(), 0);
+  listOfNumbers.addNumber(1);
+  listOfNumbers.addNumber(4);
+  listOfNumbers.addNumber(6);
+  listOfNumbers.addNumber(8);
+  t.equal(listOfNumbers.sumNumber(), 19);
   t.end();
 });
