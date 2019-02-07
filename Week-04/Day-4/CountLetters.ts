@@ -1,6 +1,6 @@
 'use strict'
 
-function genCharArray(char1: string, char2: string) {
+export function genCharArray(char1: string, char2: string) {
   let array: any[][] = [];
   for (let index: number = char1.charCodeAt(0); index <= char2.charCodeAt(0); index++) {
     array.push([String.fromCharCode(index), 0]);
@@ -8,7 +8,7 @@ function genCharArray(char1: string, char2: string) {
   return array
 }
 
-function CountLetters(sentence: string) {
+export function CountLetters(sentence: string) {
   let content: string[] = [];
   for (let index: number = 0; index < sentence.length; index++) {
     content.push(sentence.charAt(index).toLowerCase())
@@ -27,5 +27,3 @@ function CountLetters(sentence: string) {
   usedChars.sort();
   return usedChars;
 }
-
-console.log(CountLetters('asdfghjklasdfghjqwer'));
