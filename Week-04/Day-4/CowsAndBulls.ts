@@ -11,6 +11,16 @@ export class CAB {
     this.state = 'playing'
     this.guesCounter = 0;
     this.digits = digitsInput;
+    try {
+      if (this.digits[0] < 10 && this.digits[1] < 10 && this.digits[2] < 10 && this.digits[3] < 10) {
+        ''
+      } else {
+        throw new Error('One or more of the numbers are bigger then 9');
+      }
+    } catch (error) {
+      console.log(error.message);
+      return error.message;
+    }
   }
 
   guess(quessNumber: number[]): string[] {
