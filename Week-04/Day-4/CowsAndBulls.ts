@@ -1,6 +1,6 @@
 'use strict';
 
-class CAB {
+export class CAB {
   state: String;
   digits: number[];
   guesCounter: number;
@@ -33,11 +33,3 @@ class CAB {
     return info
   }
 }
-
-let CAB1 = new CAB([1, 2, 3, 4])
-console.log(CAB1.getInfo());
-console.log(CAB1.guess([5, 6, 7, 8]));
-console.log(CAB1.guess([4, 3, 9, 0]));
-console.log(CAB1.getInfo());
-console.log(CAB1.guess([1, 2, 3, 4]));
-console.log(CAB1.getInfo());
