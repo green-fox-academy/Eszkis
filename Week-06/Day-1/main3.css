@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: yellow;
+  width: 600px;
+  height: 300px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+
+.item{
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+  list-style-type: none;
+  margin-right: 10px;
+}
