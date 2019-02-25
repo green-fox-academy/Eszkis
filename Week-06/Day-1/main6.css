@@ -1,0 +1,75 @@
+body{
+  margin: 0;
+}
+
+.header{
+  display: flex;
+  background-color: purple;
+  height: 100px;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  margin: 0;
+}
+
+a{
+  background-color: cyan;
+  font-size: 24px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.mainContent{
+display: flex;
+width: 100vw;
+}
+
+.yellow{
+  display: flex;
+  background-color: yellow;
+  width: 100rem;
+  height: 100%;
+  flex-direction: column;
+}
+
+.lowerPart{
+  display: flex;
+
+}
+
+.redlist{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.red{
+  background-color: red;
+  height: 100px;
+  width: 21%;
+  margin: 2%;
+  list-style-type: none;
+}
+
+.green{
+  display: flex;
+  background-color: green;
+  width: 300px;
+  height: 100%;
+  top: 100px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.purple{
+  background-color:darkmagenta;
+  width: 250px;
+  height: 50px;
+  margin: 10px;
+}
+
+p{
+margin: 10px;
+}
