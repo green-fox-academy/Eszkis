@@ -4,8 +4,8 @@
   background-color: yellow;
   width: 600px;
   height: 300px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   padding: 0;
 }
 
@@ -14,5 +14,5 @@
   width: 50px;
   background-color: purple;
   list-style-type: none;
-  margin-right: 10px;
+  margin-left: 10px;
 }
