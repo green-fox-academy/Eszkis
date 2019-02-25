@@ -1,13 +1,17 @@
-.body{
-  width: 400px;
+body{
+  margin: 0;
 }
+
 .header{
   display: flex;
   background-color: purple;
   height: 100px;
-  width: 400px; 
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+  position: sticky;
+  margin: 0;
 }
 
 a{
@@ -20,18 +24,28 @@ a{
 .main{
   display: flex;
   background-color: yellow;
-  width: 300px;
-  height: 100vh;
-  flex-grow: 1;
+  width: 73vw;
+  height: 98vh;
+  margin: 1vw;
+  position: absolute;
+  left: 25vw;
+  z-index: -1
 }
 
 .sidebar{
   display: flex;
   background-color: green;
-  width: 100px;
-  height: 100vh;
-  position: absolute;
-  top: 108px;
-  left: 308px;
-  flex-grow: 1;
+  width: 23vw;
+  height: 98vh;
+  top: 100px;
+  margin: 1vw;
+}
+
+.footer{
+width: 98vw;
+margin: 1vw;
+height: 100px;
+background-color: grey;
+display: flex;
+
 }
