@@ -13,7 +13,6 @@ const cocktails = [
   { name: 'VIRGIN MOJITO', price: 990, contains: ['sugar', 'lime juice', 'soda water'], isAlcoholic: false },
   { name: 'SAFE SEX ON THE BEACH', price: 990, contains: ['peach schnapps', 'orange juice', 'cranberry juice'], isAlcoholic: false },
 ];
-let currentCocktails = []
 
 const alcoholList = ['GIN', 'VODKA', 'RUM', 'TEQUILA'];
 
@@ -22,11 +21,14 @@ app.set('view engine', 'ejs');
 app.use('/static', express.static('static'));
 
 app.get('/', (reg, res) => {
-  let query = reg.query
-  alcoholList.includes(query.alcohol) ? (
-    cocktails.forEach(element => element.contains.includes(query.alcohol) ?
-      currentCocktails.push(element) :
-      undefined)) : currentCocktails = cocktails;
+  let currentCocktails = []
+  let query = reg.query;
+  query.alcohol !== undefined ? (
+    alcoholList.indexOf(query.alcohol.toUpperCase()) !== -1 ? (
+      cocktails.forEach(element => element.contains.includes(query.alcohol) ?
+        currentCocktails.push(element) :
+        undefined)) : currentCocktails = cocktails)
+    : (currentCocktails = cocktails);
   res.render('home', { currentCocktails, alcoholList });
 });
 
