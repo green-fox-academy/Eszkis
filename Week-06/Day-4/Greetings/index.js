@@ -7,7 +7,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 app.get('/', (reg, res) => {
-  res.render('home', { query: reg.query });
+  res.render('home', { query: reg.query , params: {}});
 });
 
 app.listen(port, () => {
