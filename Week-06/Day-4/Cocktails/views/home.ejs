@@ -36,19 +36,22 @@
       </li>
       <li class="specContain"><%= cocktails[index].contains%> </li>
     </ul>
-    <% }; %>
-    <%}%>
-    </ul>
-    <ul class="priceList">
-      <p class="price">PRICE</p>
-      <% for (let index = 0; index < cocktails.length; index++) { %>
+    <% };}%>
+  </ul>
+
+
+
+
+
+  <ul class="priceList">
+    <p class="price">PRICE</p>
+    <% for (let index = 0; index < cocktails.length; index++) { %>
     <% if(index%2!==0){%>
     <li class="priceElement white"><strong><%= cocktails[index].price%></strong> </li>
     <% }else{ %>
     <li class="priceElement grey"><strong><%= cocktails[index].price%> </strong> </li>
-    <% }; %>
-    <%}%>
-    </ul>
+    <% };}%>
+  </ul>
 
   </div>
 </body>
