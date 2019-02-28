@@ -8,73 +8,43 @@
   padding: 0;
 }
 
-p{
-  background-color: black;
-  color: white;
+.head{
+  display: flex;
   margin: 0;
   padding: 0;
+  list-style: none;
+  width: 500px;
+}
+
+table{
+  width: 500px;
+  table-layout: fixed;
+  display: flex; 
+}
+
+tbody tr:nth-child(odd){
+  background-color: rgb(161, 161, 161);
 }
 
 .name{
-  height: 50px;
-  width: 400px;
-  justify-content: center;
   display: flex;
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 399px;
+  margin-right: 1px;
+  justify-content: center;
   align-items: center
 }
 
 .price{
-  display: flex;
+  display: flex;  
+  background-color: black;
+  color: white;
   height: 50px;
   width: 100px;
   justify-content: center;
   align-items: center
-}
-
-.list{
-  display: flex;
-}
-
-.priceList{
-  height: 50px;
-  width: 100px;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  margin: 2px;
-  padding: 0;
-}
-
-.alcoholList{
-  height: 50px;
-  width: 400px;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  margin: 2px;
-  padding: 0;
-}
-
-.alcoholElement{
-  height: 60px;
-  width: 400px;
-  padding: 0;
-}
-
-.priceElement{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 100px;
-}
-
-.white{
-  background-color: white;
-}
-
-.grey{
-  background-color: rgb(194, 190, 190);
 }
 
 .specName{
@@ -85,4 +55,18 @@ p{
 .specContain{
   list-style-type: none;
   height: 50%;
+}
+
+.priceStyle{
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+  list-style-type: none;
+}
+
+.alcoholStyle{
+  height: 60px;
+  width: 400px;
+  padding: 0;
 }
