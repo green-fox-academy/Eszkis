@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+  <h1>Cocktails</h1>
+  <ul class="main">
+    <% for (let index = 0; index < alcoholList.length; index++) { %>
+    <li><%= alcoholList[index]%> </li>
+    <%}%>
+  </ul>
+  <div class="list">
+    <ul class="alcoholList">
+      <p class="name">NAME</p>
+      <% for (let index = 0; index < cocktails.length; index++) { %>
+    <% if(index%2!==0){%>
+    <ul class="alcoholElement white">
+      <li class="specName"><strong><%= cocktails[index].name%></strong>
+        <% if(cocktails[index].isAlcoholic){%>
+        (non-alcoholic)
+        <%}%>
+      </li>
+      <li class="specContain"><%= cocktails[index].contains%> </li>
+    </ul>
+    <% }else{ %>
+    <ul class="alcoholElement grey">
+      <li class="specName"><strong><%= cocktails[index].name%></strong>
+        <% if(cocktails[index].isAlcoholic){%>
+        (non-alcoholic)
+        <%}%>
+      </li>
+      <li class="specContain"><%= cocktails[index].contains%> </li>
+    </ul>
+    <% }; %>
+    <%}%>
+    </ul>
+    <ul class="priceList">
+      <p class="price">PRICE</p>
+      <% for (let index = 0; index < cocktails.length; index++) { %>
+    <% if(index%2!==0){%>
+    <li class="priceElement white"><strong><%= cocktails[index].price%></strong> </li>
+    <% }else{ %>
+    <li class="priceElement grey"><strong><%= cocktails[index].price%> </strong> </li>
+    <% }; %>
+    <%}%>
+    </ul>
+
+  </div>
+</body>
+
+</html>

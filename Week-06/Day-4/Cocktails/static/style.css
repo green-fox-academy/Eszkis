@@ -1,0 +1,88 @@
+.main{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 300px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.name{
+  height: 50px;
+  width: 400px;
+  justify-content: center;
+  display: flex;
+  align-items: center
+}
+
+.price{
+  display: flex;
+  height: 50px;
+  width: 100px;
+  justify-content: center;
+  align-items: center
+}
+
+.list{
+  display: flex;
+}
+
+.priceList{
+  height: 50px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 2px;
+  padding: 0;
+}
+
+.alcoholList{
+  height: 50px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 2px;
+  padding: 0;
+}
+
+.alcoholElement{
+  height: 60px;
+  width: 400px;
+  padding: 0;
+}
+
+.priceElement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100px;
+}
+
+.white{
+  background-color: white;
+}
+
+.grey{
+  background-color: rgb(194, 190, 190);
+}
+
+.specName{
+  list-style-type: none;
+  height: 50%;
+}
+
+.specContain{
+  list-style-type: none;
+  height: 50%;
+}
