@@ -13,12 +13,14 @@ const images = [
   { name: 'Fury2', description: 'She saves a lot of the remaining humans from earth during her quest.', img: 'static\\images\\Fury2.jpg' },
 ];
 
+let selected = images[0];
+
 app.set('view engine', 'ejs');
 
 app.use('/static', express.static('static'));
 
 app.get('/', (reg, res) => {
-  res.render('home', { images })
+  res.render('home', { images, selected })
 });
 
 app.listen(port, () => {
