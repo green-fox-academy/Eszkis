@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body>
+  <div class="main">
+    <button class="button">
+      <img class="arrow left" src="static\images\arrow.svg">
+    </button>
+    <div class="image">
+      <img src=<%= images[0].img %>>
+      <div class="desc">
+        <h2>
+          <%=images[0].name%>
+        </h2>
+        <p>
+          <%=images[0].description%>
+        </p>
+      </div>
+    </div>
+    <button class="button">
+      <img class="arrow right" src="static\images\arrow.svg">
+    </button>
+  </div>
+  <ul class="small">
+    <% images.forEach(element => { %>
+    <li>
+      <button class="smallbutton">
+        <img class="smallImg" src=<%= element.img %>>
+      </button>
+    </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>
