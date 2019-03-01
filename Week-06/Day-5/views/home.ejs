@@ -9,33 +9,34 @@
 
 <body>
   <div class="main">
-    <button class="button">
-      <img class="arrow left" src="static\images\arrow.svg">
+    <button id="left" class="button">
+      <img class="arrow leftA" src="static\images\arrow.svg">
     </button>
-    <div class="image">
-      <img src=<%= selected.img %>>
+    <div class="image ">
+      <img id="image" src=<%= selected.img %>>
       <div class="desc">
-        <h2>
+        <h2 id="head">
           <%=selected.name%>
         </h2>
-        <p>
+        <p id="text">
           <%=selected.description%>
         </p>
       </div>
     </div>
-    <button class="button">
-      <img class="arrow right" src="static\images\arrow.svg">
+    <button id="right" class="button">
+      <img class="arrow rightA" src="static\images\arrow.svg">
     </button>
   </div>
   <ul class="small">
     <% images.forEach(element => { %>
     <li>
-      <button class="smallbutton">
+      <button class="smallButton">
         <img class="smallImg" src=<%= element.img %>>
       </button>
     </li>
     <% }) %>
   </ul>
+  <script src="static\js\gallery.js"></script>
 </body>
 
 </html>

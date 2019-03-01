@@ -26,6 +26,3 @@ app.get('/', (reg, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-// images.forEach(element =>
-//   console.log(element.img));

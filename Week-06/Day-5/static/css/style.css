@@ -29,7 +29,7 @@ img{
 
 .desc{
   position: relative;
-  bottom: 105px;
+  bottom: 104px;
   color:rgba(255, 255, 255, 1);
   align-self: flex-start;
   background-color: rgba(0, 0, 0, 0.9);
@@ -46,7 +46,7 @@ width: 50px;
   width: 30px;
 }
 
-.right{
+.rightA{
   transform: rotate(180deg);
 }
 
@@ -61,7 +61,7 @@ height: 70px;
 width: 70px;
 }
 
-.smallbutton{
+.smallButton{
   height: 70px;
   width: 70px;
   padding: 0;
