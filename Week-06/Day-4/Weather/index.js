@@ -65,9 +65,26 @@ app.set('view engine', 'ejs');
 app.use('/static', express.static('static'));
 
 app.get('/', (reg, res) => {
-  res.render('home', { forecasts, images })
+  let query = reg.query;
+  console.log(query.city);
+  console.log(query.city - 1);
+  console.log(forecasts[query.city - 1]);
+
+
+  query.city === undefined ?
+    res.render('home', { forecasts, images }) :
+    res.render('city', { forecasts, images, query });
 });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+{/* <h2><%= forecasts[query.city-1].city %></h2>
+<ul>
+  <li>
+    <img src= <%= forecasts[query.city-1].weather.images %>>
+    <p><%=forecasts[query.city-1].weather.temp %>°C </p>
+    <p><%=forecasts[query.city-1].weather.message %></p>
+  </li>
+</ul> */}

@@ -1,0 +1,41 @@
+.whole{
+  display: flex;
+  flex-direction: column;
+  width: 1100px;
+  height: 360px;
+  background-color: rgb(204, 204, 204);
+}
+
+li{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  height: 260px;
+  width: 170px;
+  background-color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1{
+font-size: 30px;
+margin: 7.665px;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  height: 100px;
+  width: 100p;
+}
+
+.temp{
+  font-size: 40px;
+  margin: 0;
+}

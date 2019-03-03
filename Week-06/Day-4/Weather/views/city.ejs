@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="static\css\styleCity.css">
+</head>
+
+<body>
+  <div class="whole">
+    <h1><%= forecasts[query.city-1].city %></h2>
+    <ul>
+      <% forecasts[query.city-1].weather.forEach(element => { %>
+      <li>
+        <img src=<%= element.img %>>
+        <p class="temp"><%=element.temp %>°C </p>
+        <p class="message"><%=element.message %></p>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+
+</html>
