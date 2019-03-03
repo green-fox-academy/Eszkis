@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="static\css\style.css">
+</head>
+
+<body>
+  <ul class="fullList">
+    <%forecasts.forEach(element=>{%>
+    <li class="sort">
+      <div class="desc">
+        <h1><%= element.city %></h1>
+        <p class="country"><%= element.location %></p>
+      </div>
+      <p class="temp"><%=element.weather[0].temp%> °C </p>
+      <img class="small" src=<%= element.weather[0].img %>>
+    </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>

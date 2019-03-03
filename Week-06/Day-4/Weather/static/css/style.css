@@ -1,0 +1,48 @@
+.fullList{
+  display: flex;
+  width: 410px;
+  height: 600px;
+  flex-direction: column;
+  background-color: rgb(200, 200, 200);
+  justify-content: space-around;
+  margin: 0;
+  padding: 20px;
+  align-items: center;
+}
+
+.sort{
+  display: flex;
+  width: 400px;
+  height: 100px;
+  list-style-type: none;
+  background-color: white;
+  padding: 5px; 
+  align-items: center;
+}
+
+.small{
+  height: 100px;
+  width:  100px;
+}
+
+.temp{
+  height: 40px;
+  width:  100px;
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.desc{
+  height: 100%;
+  width: 200px;
+}
+
+.country{
+  padding: 0;
+  margin: 0;
+}
+
+h1{
+  margin-bottom: 0;
+}
