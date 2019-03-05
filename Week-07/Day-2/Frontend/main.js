@@ -54,27 +54,37 @@ app.get('/appenda/:id', (req, res) => {
   query.id === undefined ? res.status(404).send() : res.json(answer);
 });
 
-function refactorio(n) {
-  if (n <= 0) {
-    return 1
-  } else {
-    return n * refactorio(n - 1)
-  }
-}
 
-function counter(startNumber) {
-  if (startNumber <= 1) {
-    return 1
-  } else {
-    return startNumber + counter(startNumber - 1)
-  }
-}
+
+
 
 app.post('/dountil/:action', (req, res) => {
   let data = req.body;
   let type = req.params;
 
+  function refactorio(n) {
+    let result = 1
+    for (let index = 1; index <= n; index++) {
+      result *= index
+    }
+    return result
+  }
+
+  function counter(startNumber) {
+    let result = 0
+    for (let index = 1; index <= startNumber; index++) {
+      result += index
+    }
+    return result
+  }
+
+  let resulta = {
+    sum: counter(data.until),
+    factor: refactorio(data.until)
+  }
+
   data === undefined ? res.json({ error: "Please provide a number!" }) :
-    type.action === 'sum' ? res.json({ result: counter(data.until) }) :
-      res.json({ result: refactorio(data.until) });
+    type.action === 'sum' ? res.json({ result: resulta.sum }) :
+      type.action === 'factor' ? res.json({ result: resulta.factor }) :
+        res.status(404).send();
 })
