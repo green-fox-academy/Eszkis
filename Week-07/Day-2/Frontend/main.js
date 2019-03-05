@@ -88,3 +88,29 @@ app.post('/dountil/:action', (req, res) => {
       type.action === 'factor' ? res.json({ result: resulta.factor }) :
         res.status(404).send();
 })
+
+function sum(number) {
+  let result = 0;
+  number.forEach(elemnet => result += elemnet)
+  return result;
+}
+
+function multiply(number) {
+  let result = 1;
+  number.forEach(elemnet => result *= elemnet)
+  return result;
+}
+
+function double(number) {
+  let result = number.map(elemnet => elemnet *= 2)
+  return result;
+}
+
+app.post('/arrays', (req, res) => {
+  let data = req.body;
+  data.what === undefined || data.numbers === undefined ? res.json({ error: "Please provide what to do with the numbers!" }) :
+    data.what === 'sum' ? res.json({ result: sum(data.numbers) }) :
+      data.what === 'multiply' ? res.json({ result: multiply(data.numbers) }) :
+        data.what === 'double' ? res.json({ result: double(data.numbers) }) :
+          res.json({ error: "Please provide what to do with the numbers!" });
+});
