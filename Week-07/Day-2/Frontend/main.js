@@ -114,3 +114,19 @@ app.post('/arrays', (req, res) => {
         data.what === 'double' ? res.json({ result: double(data.numbers) }) :
           res.json({ error: "Please provide what to do with the numbers!" });
 });
+
+function yodaIzer(text) {
+  text = text.toLowerCase();
+  let basic = text.split('. ');
+  let data = basic.map(element => element.split(' '));
+  console.log(basic);
+  console.log(data);
+}
+
+app.post('/sith', (req, res) => {
+  let data = req.body;
+
+  data.text === undefined ?
+    res.json({ error: "Feed me some text you have to, padawan young you are. Hmmm." }) :
+    res.json({ sith_text: yodaIzer(data.text) })
+});
