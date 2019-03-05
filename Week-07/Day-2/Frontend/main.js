@@ -1,0 +1,80 @@
+'use strict'
+
+const express = require('express');
+const app = express();
+const port = 8080;
+const path = require('path');
+
+app.use(express.json()); //middleware
+
+app.set('view engine', 'ejs');
+
+app.use('/assets', express.static('assets'));
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
+})
+
+app.get('/doubling', (req, res) => {
+
+  let query = req.query;
+  let answer = {
+    received: query.input,
+    result: query.input * 2,
+  }
+
+  let error = {
+    error: 'Please provide an input!'
+  }
+
+  query.input === undefined ? res.json(error) : res.json(answer);
+});
+
+app.get('/greeter', (req, res) => {
+  let query = req.query;
+  let answer = {
+    welcome_message: `Oh, hi there ${query.name}, my dear ${query.title}!`
+  }
+
+  query.name === undefined && query.title === undefined ? res.json({ error: 'Please provide a name and a title!' }) :
+    query.name === undefined && query.title !== undefined ? res.json({ error: 'Please provide a name!' }) :
+      query.name !== undefined && query.title === undefined ? res.json({ error: 'Please provide a title!' }) :
+        res.json(answer);
+});
+
+app.get('/appenda/:id', (req, res) => {
+  let query = req.params;
+  let answer = {
+    appended: `${query.id}a`
+  }
+  query.id === undefined ? res.status(404).send() : res.json(answer);
+});
+
+function refactorio(n) {
+  if (n <= 0) {
+    return 1
+  } else {
+    return n * refactorio(n - 1)
+  }
+}
+
+function counter(startNumber) {
+  if (startNumber <= 1) {
+    return 1
+  } else {
+    return startNumber + counter(startNumber - 1)
+  }
+}
+
+app.post('/dountil/:action', (req, res) => {
+  let data = req.body;
+  let type = req.params;
+
+  data === undefined ? res.json({ error: "Please provide a number!" }) :
+    type.action === 'sum' ? res.json({ result: counter(data.until) }) :
+      res.json({ result: refactorio(data.until) });
+})
