@@ -115,12 +115,41 @@ app.post('/arrays', (req, res) => {
           res.json({ error: "Please provide what to do with the numbers!" });
 });
 
+const irandom = (i, zero = true) => {
+  return zero ? Math.floor(Math.random() * i) : 1 + Math.floor(Math.random() * (i));
+}
+
+const pushRandomThing = (arr) => {
+  const randomThings = [
+    'Arrgh.',
+    'Uhmm.',
+    'Err..err..err.'
+  ]
+  for (let i = 0; i < irandom(2, false); i++) {
+    arr.push(randomThings[irandom(3)]);
+  }
+}
+
 function yodaIzer(text) {
+  let finalText = '';
   text = text.toLowerCase();
   let basic = text.split('. ');
   let data = basic.map(element => element.split(' '));
-  console.log(basic);
-  console.log(data);
+  data = data.map(senteces => senteces.map(word => word.replace('.', '')));
+  data.forEach(senteces => senteces.forEach((word, windex) => {
+    let temp = ''
+    windex % 2 === 1 ?
+      (temp = word, senteces[windex] = senteces[windex - 1], senteces[windex - 1] = temp) : undefined;
+  }));
+  data.forEach(senteces => pushRandomThing(senteces));
+  data.forEach(senteces => senteces.forEach((word, windex) => {
+    let temp;
+    windex === 0 ? (temp = word.charAt(0).toUpperCase() + word.slice(1), senteces[windex] = temp) : undefined;
+  }));
+  data.forEach(senteces => senteces.forEach((word, windex) => {
+    windex === senteces.length - 1 ? (finalText += word + '. ') : (finalText += word + ' ');
+  }));
+  return finalText
 }
 
 app.post('/sith', (req, res) => {
