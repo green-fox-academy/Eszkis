@@ -85,10 +85,6 @@ app.get('/books', (req, res) => {
 
 let rawData = fs.readFileSync('rawData.txt', 'utf-8').split('\r\n');
 let rows = rawData.map(element => element.split(','));
-console.log(rows[331]);
-// rows.forEach(element => element.forEach(index => index.replace("\'", "''")));
-console.log(rows[331]);
-
 conn.query(`CREATE TABLE IF NOT EXISTS csv (
 ${rows[0][0]} varchar(4) COLLATE latin1_general_ci NOT NULL DEFAULT '',
 ${rows[0][1]} varchar(10) COLLATE latin1_general_ci NOT NULL DEFAULT '',
@@ -105,4 +101,29 @@ rows.forEach(element => {
   rows.indexOf(element) === 0 ? undefined :
     conn.query(`INSERT INTO csv (id,prefix, first_name, last_name, address, height, bitcoin_address, color_preference) VALUES 
     (${mysql.escape(element[0])}, ${mysql.escape(element[1])}, ${mysql.escape(element[2])}, ${mysql.escape(element[3])}, ${mysql.escape(element[4])}, ${mysql.escape(element[5])}, ${mysql.escape(element[6])}, ${mysql.escape(element[7])});`)
+});
+
+let random = Math.floor(Math.random() * 1000) + 1
+
+conn.query(`SELECT * FROM csv WHERE id = ${random};`, (err, selectedRows) => {
+  if (err) {
+    console.log(err);
+    res.status(500).send();
+    return;
+  }
+  let keys = Object.keys(selectedRows[0]);
+  console.log(`Cheking id:${random} for random check`);
+  keys.forEach(element => {
+    selectedRows[0][element] === rows[random][keys.indexOf(element)] ?
+      console.log(element, ' is the same') :
+      console.log(element, ' is not the same');
+  })
+});
+
+conn.query(`DROP TABLE csv;`, (err, rows) => {
+  if (err) {
+    console.log(err);
+    res.status(500).send();
+    return;
+  }
 });
