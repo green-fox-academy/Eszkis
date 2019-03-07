@@ -86,8 +86,8 @@ app.get('/books', (req, res) => {
 let rawData = fs.readFileSync('rawData.txt', 'utf-8').split('\r\n');
 let rows = rawData.map(element => element.split(','));
 console.log(rows[331]);
-
-
+// rows.forEach(element => element.forEach(index => index.replace("\'", "''")));
+console.log(rows[331]);
 
 conn.query(`CREATE TABLE IF NOT EXISTS csv (
 ${rows[0][0]} varchar(4) COLLATE latin1_general_ci NOT NULL DEFAULT '',
@@ -103,5 +103,6 @@ PRIMARY KEY (${rows[0][0]})
 
 rows.forEach(element => {
   rows.indexOf(element) === 0 ? undefined :
-    conn.query(`INSERT INTO csv (id,prefix, first_name, last_name, address, height, bitcoin_address, color_preference) VALUES ('${element[0]}', '${element[1]}', '${element[2]}', '${element[3]}', '${element[4]}', '${element[5]}', '${element[6]}', '${element[7]}');`)
+    conn.query(`INSERT INTO csv (id,prefix, first_name, last_name, address, height, bitcoin_address, color_preference) VALUES 
+    (${mysql.escape(element[0])}, ${mysql.escape(element[1])}, ${mysql.escape(element[2])}, ${mysql.escape(element[3])}, ${mysql.escape(element[4])}, ${mysql.escape(element[5])}, ${mysql.escape(element[6])}, ${mysql.escape(element[7])});`)
 });
