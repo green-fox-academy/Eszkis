@@ -59,7 +59,7 @@ app.get('/books', (req, res) => {
         `${filterCat[property]} > ${parseInt(query[property])}`
   });
   let filter;
-  if (checker) {
+  if (checker && keys.length > 0) {
     filter = ` WHERE ${where.join(' AND ')}`
   } else {
     filter = ''
