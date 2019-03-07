@@ -9,6 +9,29 @@
 
 <body>
   <h1>Book list</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>Book title</td>
+        <td>Authors name</td>
+        <td>Category</td>
+        <td>Publishers name</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% datas.forEach(element => {%>
+      <tr>
+        <td> <%= element.book_name %> </td>
+        <td> <%= element.aut_name %> </td>
+        <td> <%= element.cate_descrip %> </td>
+        <td> <%= element.pub_name %> </td>
+        <td> <%= element.book_price %> EUR </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 </body>
 
 </html>

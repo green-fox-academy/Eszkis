@@ -5,6 +5,9 @@ const app = express();
 const port = 3000;
 const mysql = require('mysql');
 const path = require('path');
+const env = require('dotenv');
+const cat = ['Science', 'Technology', 'Computers', 'Nature', 'Medical']
+env.config();
 
 app.set('view engine', 'ejs');
 
@@ -22,17 +25,27 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-  // res.render('home')
-  conn.query('SHOW TABLES')
+  res.render('home')
 });
 
 app.get('/books', (req, res) => {
-  conn.query('SELECT book_name FROM book_mast;', (err, rows) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send();
-      return;
-    }
-    res.send(rows);
-  });
+  let query = req.query;
+  let keys = Object.keys(query);
+  console.log(keys);
+  
+  conn.query(`SELECT book_name,
+  aut_name,
+  cate_descrip,
+  pub_name,
+  book_price 
+  FROM book_mast bm LEFT JOIN author a ON bm.aut_id=a.aut_id 
+  LEFT JOIN category c ON bm.cate_id=c.cate_id
+  LEFT JOIN publisher p ON bm.pub_id=p.pub_id;`, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      }
+      res.render('home', { datas: rows })
+    });
 });
