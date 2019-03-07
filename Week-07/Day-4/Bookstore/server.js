@@ -6,7 +6,14 @@ const port = 3000;
 const mysql = require('mysql');
 const path = require('path');
 const env = require('dotenv');
-const cat = ['Science', 'Technology', 'Computers', 'Nature', 'Medical']
+const filterCat = {
+  BookTitle: 'bm.book_name',
+  Authors: 'a.aut_name',
+  Category: 'c.cate_descrip',
+  Publishers: 'p.pub_name',
+  Price: 'bm.book_price'
+}
+
 env.config();
 
 app.set('view engine', 'ejs');
@@ -25,14 +32,6 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-  res.render('home')
-});
-
-app.get('/books', (req, res) => {
-  let query = req.query;
-  let keys = Object.keys(query);
-  console.log(keys);
-  
   conn.query(`SELECT book_name,
   aut_name,
   cate_descrip,
@@ -41,6 +40,38 @@ app.get('/books', (req, res) => {
   FROM book_mast bm LEFT JOIN author a ON bm.aut_id=a.aut_id 
   LEFT JOIN category c ON bm.cate_id=c.cate_id
   LEFT JOIN publisher p ON bm.pub_id=p.pub_id;`, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      }
+      res.render('home', { datas: rows })
+    });
+});
+
+app.get('/books', (req, res) => {
+  const query = req.query;
+  const keys = Object.keys(query);
+  let checker = true;
+  keys.forEach(element => element in filterCat ? undefined : checker = false);
+  const where = Object.keys(query).map(property => {
+    return isNaN(query[property]) ? `${filterCat[property]} = '${query[property]}'` : `${filterCat[property]} = ${parseInt(query[property])}`
+  });
+  let filter;
+  if (checker) {
+    filter = ` WHERE ${where.join(' AND ')}`
+  } else {
+    filter = ''
+  };
+
+  conn.query(`SELECT book_name,
+  aut_name,
+  cate_descrip,
+  pub_name,
+  book_price 
+  FROM book_mast bm LEFT JOIN author a ON bm.aut_id=a.aut_id 
+  LEFT JOIN category c ON bm.cate_id=c.cate_id
+  LEFT JOIN publisher p ON bm.pub_id=p.pub_id${filter};`, (err, rows) => {
       if (err) {
         console.log(err);
         res.status(500).send();
