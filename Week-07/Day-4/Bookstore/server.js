@@ -7,11 +7,10 @@ const mysql = require('mysql');
 const path = require('path');
 const env = require('dotenv');
 const filterCat = {
-  BookTitle: 'bm.book_name',
-  Authors: 'a.aut_name',
   Category: 'c.cate_descrip',
   Publishers: 'p.pub_name',
-  Price: 'bm.book_price'
+  PriceLower: 'bm.book_price',
+  PriceGreater: 'bm.book_price'
 }
 
 env.config();
@@ -55,7 +54,9 @@ app.get('/books', (req, res) => {
   let checker = true;
   keys.forEach(element => element in filterCat ? undefined : checker = false);
   const where = Object.keys(query).map(property => {
-    return isNaN(query[property]) ? `${filterCat[property]} = '${query[property]}'` : `${filterCat[property]} = ${parseInt(query[property])}`
+    return isNaN(query[property]) ? `${filterCat[property]} = '${query[property]}'` :
+      property === 'PriceLower' ? `${filterCat[property]} < ${parseInt(query[property])}` :
+        `${filterCat[property]} > ${parseInt(query[property])}`
   });
   let filter;
   if (checker) {
