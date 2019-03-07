@@ -1,5 +1,6 @@
 'use strict'
 
+let fs = require('fs');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -80,4 +81,27 @@ app.get('/books', (req, res) => {
       }
       res.render('home', { datas: rows })
     });
+});
+
+let rawData = fs.readFileSync('rawData.txt', 'utf-8').split('\r\n');
+let rows = rawData.map(element => element.split(','));
+console.log(rows[331]);
+
+
+
+conn.query(`CREATE TABLE IF NOT EXISTS csv (
+${rows[0][0]} varchar(4) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][1]} varchar(10) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][2]} varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][3]} varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][4]} varchar(50) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][5]} varchar(6) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][6]} varchar(40) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+${rows[0][7]} varchar(7) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+PRIMARY KEY (${rows[0][0]})
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;`)
+
+rows.forEach(element => {
+  rows.indexOf(element) === 0 ? undefined :
+    conn.query(`INSERT INTO csv (id,prefix, first_name, last_name, address, height, bitcoin_address, color_preference) VALUES ('${element[0]}', '${element[1]}', '${element[2]}', '${element[3]}', '${element[4]}', '${element[5]}', '${element[6]}', '${element[7]}');`)
 });
