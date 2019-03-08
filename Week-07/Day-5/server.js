@@ -90,3 +90,29 @@ app.put('/posts/:id/:type', (req, res) => {
         }));
     }));
 });
+
+app.delete('/posts/:id', (req, res) => {
+  let id = req.params;
+  let header = req.headers;
+  console.log(id.id);
+  console.log(header.userid);
+
+  isNaN(id.id) ? res.send({ answer: 'Send a correct id number' }) : (
+    conn.query(`SELECT * FROM posts WHERE ID = ${id.id}`, (err, deletedrow) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      };
+      conn.query(`DELETE FROM posts WHERE id = ${id.id} AND owner = (SELECT userName FROM users WHERE id = ${(header.userid)});`, (err, rows) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send();
+          return;
+        };
+        rows.affectedRows < 1 ? res.send({ answer: `You can\'t delete this post!` }) : res.send({ deletedrow });
+      });
+    }));
+
+
+});
