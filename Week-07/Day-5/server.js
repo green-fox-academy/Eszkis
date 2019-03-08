@@ -40,38 +40,53 @@ app.get('/posts', (req, res) => {
       res.status(500).send();
       return;
     }
-    res.render('home', { basic: 'Post has been sent' })
     res.send({ datas: rows })
   });
-
 })
 
 app.post('/posts', (req, res) => {
   let rawData = req.body;
-  console.log('rawData: ', rawData);
-  console.log('rawData keys: ', Object.keys(rawData));
   Object.keys(rawData).length === 0 ? undefined : (
-    conn.query(`INSERT INTO posts(title, url) VALUES (${mysql.escape(rawData.title)},${mysql.escape(rawData.url)});`, (err, rows) => {
+    conn.query(`INSERT INTO posts(title, url) VALUES (${mysql.escape(rawData.title)},${mysql.escape(rawData.url)});`, (err, insInfo) => {
       if (err) {
         console.log(err);
         res.status(500).send();
         return;
       };
-      conn.query(`SELECT LAST_INSERT_ID();`, (err, ID) => {
+      conn.query(`SELECT * FROM posts WHERE ID = ${insInfo.insertId}`, (err, rows) => {
         if (err) {
           console.log(err);
           res.status(500).send();
           return;
         };
-        conn.query(`SELECT * FROM posts WHERE ID = ${ID[0]['LAST_INSERT_ID()']}`, (err, rows) => {
+        res.send({ rows });
+      });
+    })
+  )
+});
+
+app.put('/posts/:id/:type', (req, res) => {
+  let type = req.params;
+  let voteType = {
+    upvote: 'score + 1',
+    downvote: 'score - 1'
+  }
+
+  isNaN(type.id) ? res.send({ answer: 'Send a correct id number' }) : (
+    conn.query(`UPDATE posts SET score = ${voteType[type.type]}, vote = vote + 1 WHERE id = ${type.id};`, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      };
+      rows.affectedRows < 1 ? res.send({ answer: 'Send a correct id number' }) : (
+        conn.query(`SELECT * FROM posts WHERE ID = ${type.id}`, (err, rows) => {
           if (err) {
             console.log(err);
             res.status(500).send();
             return;
           };
-          res.send({ datas: rows });
-        });
-      });
-    })
-  )
+          res.send({ rows });
+        }));
+    }));
 });
