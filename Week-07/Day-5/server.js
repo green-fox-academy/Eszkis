@@ -7,6 +7,7 @@ const port = 3000;
 const mysql = require('mysql');
 const path = require('path');
 const env = require('dotenv');
+env.config();
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -14,7 +15,6 @@ const conn = mysql.createConnection({
   database: process.env.DB_DATABASE
 });
 
-env.config();
 
 app.set('view engine', 'ejs');
 
@@ -31,3 +31,16 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home', { basic: 'Hello world!' })
 });
+
+app.get('/posts', (req, res) => {
+  conn.query(`SELECT * FROM posts;`, (err, rows) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send();
+      return;
+    }
+    res.render('home', { basic: 'Post has been sent' })
+    res.send({ datas: rows })
+  });
+
+})
