@@ -46,8 +46,9 @@ app.get('/posts', (req, res) => {
 
 app.post('/posts', (req, res) => {
   let rawData = req.body;
+  let header = req.headers;
   Object.keys(rawData).length === 0 ? undefined : (
-    conn.query(`INSERT INTO posts(title, url) VALUES (${mysql.escape(rawData.title)},${mysql.escape(rawData.url)});`, (err, insInfo) => {
+    conn.query(`INSERT INTO posts(title, url, owner) VALUES (${mysql.escape(rawData.title)},${mysql.escape(rawData.url)},(SELECT userName FROM users WHERE id = ${mysql.escape(header.userid)}));`, (err, insInfo) => {
       if (err) {
         console.log(err);
         res.status(500).send();
@@ -71,7 +72,6 @@ app.put('/posts/:id/:type', (req, res) => {
     upvote: 'score + 1',
     downvote: 'score - 1'
   }
-
   isNaN(type.id) ? res.send({ answer: 'Send a correct id number' }) : (
     conn.query(`UPDATE posts SET score = ${voteType[type.type]}, vote = vote + 1 WHERE id = ${type.id};`, (err, rows) => {
       if (err) {
