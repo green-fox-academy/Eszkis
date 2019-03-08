@@ -15,6 +15,7 @@ const conn = mysql.createConnection({
   database: process.env.DB_DATABASE
 });
 
+app.use(express.json())
 
 app.set('view engine', 'ejs');
 
@@ -44,3 +45,33 @@ app.get('/posts', (req, res) => {
   });
 
 })
+
+app.post('/posts', (req, res) => {
+  let rawData = req.body;
+  console.log('rawData: ', rawData);
+  console.log('rawData keys: ', Object.keys(rawData));
+  Object.keys(rawData).length === 0 ? undefined : (
+    conn.query(`INSERT INTO posts(title, url) VALUES (${mysql.escape(rawData.title)},${mysql.escape(rawData.url)});`, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      };
+      conn.query(`SELECT LAST_INSERT_ID();`, (err, ID) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send();
+          return;
+        };
+        conn.query(`SELECT * FROM posts WHERE ID = ${ID[0]['LAST_INSERT_ID()']}`, (err, rows) => {
+          if (err) {
+            console.log(err);
+            res.status(500).send();
+            return;
+          };
+          res.send({ datas: rows });
+        });
+      });
+    })
+  )
+});
