@@ -54,10 +54,6 @@ app.get('/appenda/:id', (req, res) => {
   query.id === undefined ? res.status(404).send() : res.json(answer);
 });
 
-
-
-
-
 app.post('/dountil/:action', (req, res) => {
   let data = req.body;
   let type = req.params;
@@ -158,4 +154,40 @@ app.post('/sith', (req, res) => {
   data.text === undefined ?
     res.json({ error: "Feed me some text you have to, padawan young you are. Hmmm." }) :
     res.json({ sith_text: yodaIzer(data.text) })
+});
+
+let lang = {
+  hu: 'teve',
+  eng: 'oppish'
+}
+
+function gibrisizer(object) {
+  let vowels = ['a', 'á', 'o', 'ó', 'u', 'ú', 'e', 'é', 'i', 'í', 'ö', 'ő', 'ü']
+  let finalText = '';
+  let basic = object.text.split('');
+  let char = {
+    hu: 'v',
+    eng: 'op'
+  }
+
+  basic = basic.map(element => {
+    if (vowels.indexOf(element.toLowerCase()) >= 0) {
+      element = element + char[object.lang] + element.toLowerCase();
+      return element
+    } else {
+      return element
+    }
+  })
+  basic.forEach(elemnet => finalText += elemnet);
+  return finalText;
+}
+
+app.post('/translate', (req, res) => {
+  let data = req.body;
+  data.text === undefined && data.lang === undefined ? res.json({ error: 'Please give  text, and language input!' }) :
+    data.text === undefined ? res.json({ error: 'Please give a text input!' }) :
+      !(data.lang in lang) ? res.json({ error: 'Please give a language input!' }) : res.json({
+        translated: gibrisizer(data),
+        lang: lang[data.lang]
+      });
 });
