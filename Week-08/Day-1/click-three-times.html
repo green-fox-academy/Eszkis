@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+  <button>Click me</button>
+  <h2></h2>
+
+  <!-- You can work in the html or in a separate js file. Like:
+
+  <script>
+  Create a simple HTML document with one button.
+  If the user clicks the button 3 times, and 5 seconds is already elapsed since the page is loaded, a text should appear under the button:    
+  5 seconds elapsed and clicked 3 times
+  If the user starts clicking before the first 5 seconds, nothing should be printed
+  </script>
+
+    OR
+
+    <script src="one-time-clicker.js"></script> -->
+
+  <script>
+    const button = document.querySelector('button');
+    const header = document.querySelector('h2');
+    const body = document.querySelector("body");
+    let counter = 0;
+    console.log(body);
+    window.onload = () => {
+      console.log(counter);
+      setTimeout(() => {
+        button.addEventListener('click', () => {
+          console.log(counter);
+          counter === 3 ?
+            header.innerText = '5 seconds elapsed and clicked 3 times' :
+            counter++
+        })
+      }, 5000);
+    };
+
+  </script>
+</body>
+
+</html>
