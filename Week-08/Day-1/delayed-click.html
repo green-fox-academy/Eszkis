@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+  <button>Click me</button>
+  <h2></h2>
+
+  <!-- You can work in the html or in a separate js file. Like:
+
+    <script>
+    Create a simple HTML document with one button. 
+    If the user clicks the button it should wait 2 seconds and it should show a text under the button: 2 seconds ellapsed
+    </script>
+
+    OR
+
+    <script src="one-time-clicker.js"></script> -->
+
+  <script>
+    const button = document.querySelector('button');
+    const header = document.querySelector('h2');
+    button.addEventListener('click', () => {
+      setTimeout(() => {
+        header.innerText = '2 seconds ellapsed'
+      }, 2000);
+    });
+
+  </script>
+</body>
+
+</html>
