@@ -1,25 +1,49 @@
-let ul = document.querySelector('ul')
-let body = document.querySelector('body')
-let httpRequest = new XMLHttpRequest();
-httpRequest.onreadystatechange = console.log;
-httpRequest.open('GET', 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=apollo+11&api-key=vO4k95y5Re5sKMVLoMD2jYIcppXhOIEV', true);
-httpRequest.send(null);
+'use strict'
 
-httpRequest.onload = () => {
-  let data = JSON.parse(httpRequest.responseText);
-  console.log(data);
-  console.log(data.response.docs[0]);
-  let headline = document.createElement('li');
-  headline.textContent = data.response.docs[0].headline.main
-  ul.appendChild(headline);
-  let snip = document.createElement('li');
-  snip.textContent = data.response.docs[0].snippet;
-  ul.appendChild(snip);
-  let date = document.createElement('li');
-  date.textContent = data.response.docs[0].pub_date;
-  ul.appendChild(date);
-  let url = document.createElement('a');
-  url.innerText = data.response.docs[0].web_url;
-  url.setAttribute('href', data.response.docs[0].web_url)
-  body.appendChild(url);
+let input = document.querySelector('#inputField').value;
+const list = document.querySelector('ul');
+
+const http = new XMLHttpRequest();
+http.open('GET', `https://swapi.co/api/people`, true);
+http.onload = () => {
+  const response = JSON.parse(http.responseText);
+  response.results.forEach(data => {
+    if (data.name === input) {
+      let keys = Object.keys(data);
+      keys.forEach(element => {
+        let listElement = document.createElement('li');
+        listElement.innerText = `${element}: ${data[element]}`;
+        list.appendChild(listElement);
+      });
+    } else {
+    }
+  });
 }
+
+const button = document.querySelector('#search');
+
+button.addEventListener('click', () => {
+  while (list.firstChild) { list.removeChild(list.firstChild) };
+  input = document.querySelector('#inputField').value;
+  http.open('GET', `https://swapi.co/api/people`, true);
+  http.send(null);
+  http.onload = () => {
+    const response = JSON.parse(http.responseText);
+    response.results.forEach(data => {
+      if (data.name === input) {
+        let keys = Object.keys(data);
+        keys.forEach(element => {
+          let listElement = document.createElement('li');
+          listElement.innerText = `${element}: ${data[element]}`;
+          element === 'name' ? listElement.onclick = () => {
+            let elementList = document.querySelectorAll('li');
+            console.log(elementList);
+            elementList.forEach(element => element.innerText.split(' ')[0] === 'films:' ? element.style.display = 'block' : element.style.display = 'none');
+          } : undefined;
+          list.appendChild(listElement);
+        });
+      } else {
+      }
+    });
+  }
+});
