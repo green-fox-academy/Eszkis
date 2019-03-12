@@ -1,0 +1,28 @@
+table{
+  height: 360px;
+  width: 260px;
+  background-color: blue;
+}
+
+thead td{
+color: white;
+background-color: black;
+border: 3px grey;
+}
+
+td{
+  height: 50px;
+  width: 100px;
+}
+
+tr:nth-child(odd  ) {background: grey}
+tr:nth-child(even) {background: white}
+
+thead{
+  height: 50px;
+  width: 210px;
+}
+
+.price::before{
+  content: '$ '
+}
