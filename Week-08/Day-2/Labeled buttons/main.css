@@ -1,0 +1,67 @@
+.icons{
+  background-color: black;
+height: 30px;
+width: 30px;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.whole{
+  background-color: grey;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconSet{
+  display: flex;
+  height: 50px;
+  width: 100px;
+  align-items: center;
+}
+
+.fa-clipboard-check{
+  color: white;
+}
+
+.fa-eraser{
+  color: white;
+}
+
+.fa-caret-right{
+  width: 6px;
+  z-index: 3;
+  position: relative;
+  left: -1px;
+  display: none;
+}
+
+p{
+  margin: 0;
+  color: white;
+}
+
+.text{
+  height: 30px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -6px;
+}
+
+.delete{
+  background: red;
+  display: none;
+}
+
+.sure{
+  background: green;
+  display: none;
+}
