@@ -15,7 +15,7 @@ td{
   width: 100px;
 }
 
-tr:nth-child(odd  ) {background: grey}
+tr:nth-child(odd) {background: grey}
 tr:nth-child(even) {background: white}
 
 thead{

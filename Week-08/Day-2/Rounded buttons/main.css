@@ -1,0 +1,108 @@
+.container{
+  background: blue;
+  height: 250px;
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.button{
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  border-radius: 5px 5px 5px 5px;
+  border: 0;
+  padding: 0;
+}
+
+.red{
+  background-color: hsl(0, 100%, 36%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 100%, 46%);
+}
+
+.red:hover{
+  background-color: hsl(0, 100%, 46%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 100%, 56%);
+}
+
+.red:active{
+  background-color: hsl(0, 100%, 26%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 100%, 36%);
+  }
+
+.green{
+  background-color: hsl(125, 100%, 32%);
+  box-shadow: 0px 8px 0px 0px hsl(125, 100%, 42%);
+}
+
+.green:hover{
+  background-color: hsl(125, 100%, 42%);
+  box-shadow: 0px 8px 0px 0px hsl(125, 100%, 52%);
+}
+
+.green:active{
+  background-color: hsl(125, 100%, 22%);
+  box-shadow: 0px 8px 0px 0px hsl(125, 100%, 32%);
+  }
+
+.grey{
+  background-color: hsl(0, 0%, 30%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 0%, 40%);
+}
+
+.grey:hover{
+  background-color: hsl(0, 0%, 40%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 0%, 50%);
+}
+
+.grey:active{
+  background-color: hsl(0, 0%, 20%);
+  box-shadow: 0px 8px 0px 0px hsl(0, 0%, 30%);
+  }
+
+.purple{
+  background-color: hsl(271, 66%, 30%);
+  box-shadow: 0px 8px 0px 0px hsl(271, 66%, 40%);
+}
+
+.purple:hover{
+  background-color: hsl(271, 66%, 40%);
+  box-shadow: 0px 8px 0px 0px hsl(271, 66%, 50%);
+}
+
+.purple:active{
+  background-color: hsl(271, 66%, 20%);
+  box-shadow: 0px 8px 0px 0px hsl(271, 66%, 30%);
+  }
+
+.lightseagreen{
+  background-color: hsl(148, 75%, 27%);
+  box-shadow: 0px 8px 0px 0px hsl(148, 75%, 37%);
+}
+
+.lightseagreen:hover{
+  background-color: hsl(148, 75%, 37%);
+  box-shadow: 0px 8px 0px 0px hsl(148, 75%, 47%);
+}
+
+.lightseagreen:active{
+  background-color: hsl(148, 75%, 17%);
+  box-shadow: 0px 8px 0px 0px hsl(148, 75%, 27%);
+  }
+
+.yellow{
+  background-color: hsl(61, 100%, 30%);
+  box-shadow: 0px 8px 0px 0px hsl(61, 100%, 40%);
+}
+
+.yellow:hover{
+  background-color: hsl(61, 100%, 40%);
+  box-shadow: 0px 8px 0px 0px hsl(61, 100%, 50%);
+}
+
+.yellow:active{
+  background-color: hsl(61, 100%, 20%);
+  box-shadow: 0px 8px 0px 0px hsl(61, 100%, 30%);
+  }
