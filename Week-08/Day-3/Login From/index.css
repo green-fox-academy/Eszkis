@@ -1,0 +1,60 @@
+body{
+  background: grey;
+}
+
+.main{
+  height: 200px;
+  width: 300px;
+  background: white;
+
+}
+
+input{
+  display: block;
+  width: 200px;
+
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+button{
+  background: black;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+  height: 30px;
+  width: 100px;
+  border: 0;
+  padding: 0;
+}
+
+.password{
+display: flex;
+align-items: center;
+}
+
+img{
+  height: 15px;
+  width: 15px;
+  position: relative;
+  right: 20px;
+}
+
+.passwordField{
+  /* border-right-width: 0; */
+}
+
+a{
+  position: relative;
+  left: 50%;
+  font-size: 10px;
+}
+
+p{
+  font-size: 30px;
+  margin: 20px;
+}
+
