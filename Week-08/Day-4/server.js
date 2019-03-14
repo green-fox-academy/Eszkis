@@ -40,7 +40,7 @@ app.get('/posts', (req, res) => {
       res.status(500).send();
       return;
     }
-    res.render('reddit',{ datas: rows })
+    res.render('reddit', { rows })
   });
 })
 

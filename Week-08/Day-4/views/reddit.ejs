@@ -13,27 +13,29 @@
   </header>
   <div class="main">
     <ul class="postList">
-      <li class="post">
+      <% rows.forEach(element=>{%>
+      <li data-postid="<%= element.id %>" class="post">
         <div class="rating">
           <img src="../static/img/upvote.png">
-          <p class="vote">100</p>
+          <p class="vote"><%= element.score %></p>
           <img src="../static/img/downvote.png">
         </div>
         <div class="postDetail">
           <div class="postHeader">
-            <p class="postTitle">title</p>
-            <a class="postUrl" href="">(url)</a>
+            <p class="postTitle"><%= element.title %></p>
+            <a class="postUrl" href="<%= element.url %>">(<%= element.url %>)</a>
           </div>
           <div class="dateOwner">
-            <p class="date">date</p>
-            <p class="owner">owner</p>
+            <p class="date">submitted at <%= element.addedTime.toString().substr(4, 11) %> by </p>
+            <p class="owner"> <%= element.owner %></p>
           </div>
-          <div>
+          <div class="options">
             <a href="">delete</a>
             <a href="">edit</a>
           </div>
         </div>
       </li>
+      <%});%>
     </ul>
     <div class="info">
       <button class="submit">Submit a new post</button>
@@ -46,6 +48,7 @@
       </div>
     </div>
   </div>
+  <script src="../static/js/reddit.js"></script>
 </body>
 
 </html>
