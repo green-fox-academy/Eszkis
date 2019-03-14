@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views')
 
 app.use('/static', express.static('static'));
 app.use(express.urlencoded({ extended: true }));
@@ -16,9 +17,9 @@ app.listen(port, () => {
 });
 
 app.post('/signup', (req, res) => {
-  let info=req.body
+  let info = req.body
   console.log(info);
   // res.json(info);
-  //app.render('response')
+  // app.render('response')
   res.send(`<h1>Thanks ${info.username}, we will send updates to ${info.email}.</h1>`)
 });

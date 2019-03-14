@@ -2,6 +2,12 @@ body{
   width: 1280px;
 }
 
+html{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 header{
   background: url('../img/header.jpg') no-repeat;
   width: 100%;
@@ -27,7 +33,7 @@ p{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(204, 204, 204);
+  background-color: rgb(179, 179, 179);
 }
 
 .post{
@@ -35,23 +41,20 @@ p{
   width: 100%;
   height: 100px;
   background-color: white;
-  border:solid 1px rgb(204, 204, 204);
+  border:solid 1px rgb(179, 179, 179);
 }
 
 .postList{
   width: 74%;
   height: 100vh;
   margin: 1%;
-  background-color: red;
   padding: 0;
 }
 
 .info{
   width: 24%;
   height: 300px;
-  margin: 1%;
-  background-color: blue;
-  
+  margin: 1%;  
 }
 
 .vote{
@@ -91,7 +94,7 @@ p{
 
 .dateOwner{
   display: flex;
-  
+
 }
 
 .date{
@@ -100,4 +103,41 @@ p{
 
 .owner{
 color: rgb(103, 103, 255);
+}
+
+.submit{
+  width: 100%;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  color: white;
+  background-color: rgb(51, 51, 255);
+  letter-spacing: 0.2em;
+}
+
+.static{
+  width: 100%;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.static p{
+  width: 95%;
+  height: 30px;
+  background-color: whitesmoke;
+  padding-top: 15px;
+  padding-left: 5%;
+  margin-bottom: 0;
+}
+
+.static ul{
+  font-size: 13px;
+  background-color: #e0e0e0;
+  margin-top: 0;
+}
+
+.static li{
+  font-size: 13px;
 }
