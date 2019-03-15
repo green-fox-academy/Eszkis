@@ -1,0 +1,110 @@
+body{
+  background: grey;
+  height: 300px;
+  width: 500px;
+}
+
+.whole{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+  background: white;
+  margin: 0;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 40%;
+}
+
+h3{
+  height: 10%;
+  margin:0;
+  margin-top: 20px;
+}
+
+.info p{
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90%;
+}
+
+.others{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 66%;
+}
+
+.others p{
+  margin: 2%;
+  border: 0;
+  height: 15%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px 3px 3px 3px;
+  color: white;
+}
+
+#fb{
+  background-color: blue;
+}
+
+#tw{
+  background-color: rgb(36, 212, 224);
+}
+
+#gg{
+  background-color: red;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.or{
+  height: 30px;
+  width: 30px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: rgb(181, 181, 181);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 4px -2px rgb(58, 58, 58);
+  font-size: 13px;
+}
+
+input{
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color: grey;
+}
+
+button{
+  width: 100px;
+  height: 30px;
+  background: green;
+  border-radius: 5px 5px 5px 5px;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
