@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 let table = [
-  { author: 'RHCP', title: 'Californication', genre:'rock', year: '2000', rating: 3 },
-  { author: 'RHCP', title: 'Californication', genre:'rock', year: '2000', rating: 5 },
-  { author: 'RHCP2', title: 'Californication', genre:'hip-hop', year: '2001', rating: 2 },
-  { author: 'RHCP2', title: 'Californication', genre:'hip-hop', year: '2001', rating: 7 },
-  { author: 'RHCP3', title: 'Californication', genre:'classic', year: '2005', rating: 1 }
+  { author: 'RHCP', title: 'Californication', genre: 'rock', year: '2000', rating: 3 },
+  { author: 'RHCP', title: 'Californication', genre: 'rock', year: '2000', rating: 5 },
+  { author: 'RHCP2', title: 'Californication', genre: 'hip-hop', year: '2001', rating: 2 },
+  { author: 'RHCP2', title: 'Californication', genre: 'hip-hop', year: '2001', rating: 7 },
+  { author: 'RHCP3', title: 'Californication', genre: 'classic', year: '2005', rating: 1 }
 ]
 
 app.get('/awesome', (req, res) => {
@@ -15,7 +15,7 @@ app.get('/awesome', (req, res) => {
 app.get('/awesome/add', (req, res) => {
   let data = req.query;
   let newData = {
-    author: data.author, title: data.title, year: data.year, rating: parseInt(data.rating)
+    author: data.author, title: data.title, genre: data.genre, year: data.year, rating: parseInt(data.rating)
   }
   table.push(newData);
   res.status(200).send({ table });
