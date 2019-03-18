@@ -3,16 +3,14 @@ const app = express();
 
 app.get('/groot', (req, res) => {
   // TODO: implement this method
-  let data = {
-    message: 'i love this task'
-  };
-  if (data === undefined) {
-    res.send({ "error": "I am Groot!" });
-  } else {
+  let data = req.query;
+  if ('message' in data) {
     res.send({
       "received": data.message,
       "translated": "I am Groot!"
     });
+  } else {
+    res.send({ "error": "I am Groot!" });
   };
 });
 
