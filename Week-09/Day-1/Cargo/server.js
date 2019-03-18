@@ -1,6 +1,5 @@
 'use strict';
 
-const port = 3000;
 const express = require('express');
 const app = express();
 let cargo = {
@@ -28,14 +27,9 @@ function remaining(cargo, max, data) {
   cargo[data.caliber] += parseInt(data.amount);
 }
 
-app.listen(port, () => {
-  console.log('Server running on port %d', port);
-});
-
-
 app.get('/rocket', (req, res) => {
   // TODO: implement this method
-  res.send({
+  res.status(200).send({
     "caliber25": cargo[".25"],
     "caliber30": cargo[".30"],
     "caliber50": cargo[".50"],

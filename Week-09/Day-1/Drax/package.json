@@ -1,19 +1,24 @@
 {
-  "name": "cargo",
+  "name": "Drax",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon back.js"
+    "start": "nodemon server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
-  },
   "devDependencies": {
     "supertest": "^4.0.2",
     "tape": "^4.10.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
   }
 }
