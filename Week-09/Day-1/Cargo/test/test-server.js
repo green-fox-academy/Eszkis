@@ -4,42 +4,66 @@ const test = require('tape');
 const request = require('supertest');
 const app = require('../server');
 
-test('yondu endpoint with input', (t) => {
+test('print out cargo', (t) => {
   request(app)
-    .get('/yondu?distance=100&time=10')
+    .get('/rocket')
     .expect(200, {
-      distance: "100",
-      time: "10",
-      speed: 10
+      "caliber25": 0,
+      "caliber30": 0,
+      "caliber50": 0,
+      "shipstatus": 'empty',
+      "ready": false
     })
     .end(function (err, res) {
-      if (err) throw err;
+      t.error(err)
+      t.end();
     });
-  t.end();
 });
 
-test('yondu endpoint with time=0', (t) => {
+test('print fill when empty', (t) => {
   request(app)
-    .get('/yondu?distance=100&time=0')
+    .get('/rocket/fill?caliber=.30&amount=5000')
     .expect(200, {
-      distance: "100",
-      time: "0",
-      speed: null
+      "caliber25": 0,
+      "caliber30": 5000,
+      "caliber50": 0,
+      "shipstatus": '40%',
+      "ready": false
     })
     .end(function (err, res) {
-      if (err) throw err;
+      t.error(err)
+      t.end();
     });
-  t.end();
 });
 
-test('yondu endpoint with no input', (t) => {
+test('will be full after fill', (t) => {
   request(app)
-    .get('/yondu')
+    .get('/rocket/fill?caliber=.50&amount=7500')
     .expect(200, {
-      error: "give proper input"
+      "caliber25": 0,
+      "caliber30": 5000,
+      "caliber50": 7500,
+      "shipstatus": 'full',
+      "ready": true
     })
     .end(function (err, res) {
-      if (err) throw err;
+      t.error(err)
+      t.end();
     });
-  t.end();
+});
+
+test('fill when full', (t) => {
+  request(app)
+    .get('/rocket/fill?caliber=.50&amount=7500')
+    .expect(200, {
+      "caliber25": 0,
+      "caliber30": 5000,
+      "caliber50": 7500,
+      "shipstatus": 'full',
+      "ready": true
+    })
+    .end(function (err, res) {
+      t.error(err)
+      t.end();
+    });
 });
