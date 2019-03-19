@@ -1,7 +1,7 @@
 .box{
   display: grid;
-  grid-template-columns: 5% 30% 60% 5%;
-  grid-template-rows:   10% 80% 10%;
+  grid-template-columns: 5% 45% 22.5% 22.5% 5%;
+  grid-template-rows:   10% 40% 40% 10%;
   width: 100vw;
   grid-gap: 10px;
 }
@@ -10,7 +10,7 @@ header{
   display: grid;
   grid-template-columns: repeat(26, 1fr);
   background-color: purple;
-  grid-column: 1/5;
+  grid-column: 1/6;
 }
 
 header>div{
@@ -35,24 +35,50 @@ header>div{
   grid-column: 8/10;
 }
 
-.left{
-  background-color: green;
-  grid-column: 2/3;
-  grid-row: 2/2;
-  color: green;
-  height: 70vh;
-}
-
-.right{
-  background-color: yellow;
-  grid-column: 3/4;
-  grid-row: 2/2;
-  color: yellow;
-  height: 70vh;
-}
-
 footer{
-  grid-column: 2/4;
+  grid-column: 2/5;
   background-color: grey;
   color: grey;
+}
+
+.box>div{
+  background-color: green;
+  height: 40vh;
+}
+
+.five{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.six{
+  grid-column: 3/5;
+  grid-row: 2/3;
+}
+
+.seven{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.eight{
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.nine{
+  grid-column: 4/5;
+  grid-row: 3/4;
+}
+
+.outer{
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 5% 90% 5%;
+}
+
+.inner{
+  background-color: red;
+  grid-row: 2/3;
+  grid-column: 2/3;
 }
