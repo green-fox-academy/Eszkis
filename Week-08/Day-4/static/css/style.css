@@ -118,13 +118,20 @@ color: rgb(103, 103, 255);
 }
 
 .submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 30px;
   border: 0;
   padding: 0;
-  color: white;
   background-color: rgb(51, 51, 255);
+}
+
+.newPost{
+  color: white;
   letter-spacing: 0.2em;
+  font-size: 13px;
 }
 
 .static{
@@ -152,4 +159,8 @@ color: rgb(103, 103, 255);
 
 .static li{
   font-size: 13px;
+}
+
+form{
+  margin: 10px;
 }

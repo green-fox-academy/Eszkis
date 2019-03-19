@@ -16,9 +16,9 @@
       <% rows.forEach(element=>{%>
       <li data-postid="<%= element.id %>" class="post">
         <div class="rating">
-          <img src="../static/img/upvote.png">
+          <img class="upVote" src="../static/img/upvote.png">
           <p class="vote"><%= element.score %></p>
-          <img src="../static/img/downvote.png">
+          <img class="downVote" src="../static/img/downvote.png">
         </div>
         <div class="postDetail">
           <div class="postHeader">
@@ -30,15 +30,17 @@
             <p class="owner"> <%= element.owner %></p>
           </div>
           <div class="options">
-            <a href="">delete</a>
-            <a href="">edit</a>
+            <a class="delete">delete</a>
+            <a class="edit" href="./posts/edit<%= element.id %>">edit<%= element.id %></a>
           </div>
         </div>
       </li>
       <%});%>
     </ul>
     <div class="info">
-      <button class="submit">Submit a new post</button>
+      <div class="submit">
+        <a class="newPost" href="./posts/new">Submit a new post</a>
+      </div>
       <div class="static">
         <p>ABOUT</p>
         <ul>Share and discuss informatice content on:

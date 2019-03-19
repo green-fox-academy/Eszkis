@@ -134,3 +134,13 @@ app.put('/posts/:id', (req, res) => {
         });
     }));
 });
+
+app.get('/posts/new', (req, res) => {
+  res.render('new');
+});
+
+app.get('/posts/edit:id', (req, res) => {
+  let id = req.params;
+  console.log(id);  
+  res.render('edit', { id });
+});
