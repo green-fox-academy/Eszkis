@@ -1,0 +1,21 @@
+.box{
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 1fr;
+  background-color: purple;
+}
+
+.box div{
+  display: flex;
+  background-color: rgb(233, 233, 34);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 30px;
+}
+
+.box div:nth-child(even){
+  background-color: green;
+}
