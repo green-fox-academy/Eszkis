@@ -1,11 +1,11 @@
-'use strick'
+'use strict';
 
-function first() {
-  return Promise.resolve('asdfaslidfbaskdzmgahtnvazkcslz');
-}
+/* global first, second */
 
-function second(value) {
-  console.log(value);
-}
+var firstPromise = first();
 
-first().then(second);
+var secondPromise = firstPromise.then(function (val) {
+  return second(val);
+});
+
+secondPromise.then(console.log);
