@@ -18,6 +18,10 @@ ul{
   background-color: white;  
 }
 
+li{
+  list-style: none;
+}
+
 .create{
   grid-column: 6/9;
 }

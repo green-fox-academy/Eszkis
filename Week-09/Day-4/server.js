@@ -29,32 +29,64 @@ app.get('/game', (req, res) => {
   let question
   allID()
     .then((idList) => {
-      specID = idList[getARandomNumber(0, idList.length - 1)];      
+      specID = idList[getARandomNumber(0, idList.length - 1)];
       return randQuest(specID);
     })
     .then((rows) => {
       question = rows;
       return answer(specID);
     })
-    .then((answers) => {    
+    .then((answers) => {
       res.render('main', {
         score: 0,
         question: question,
         answers: answers
       });
     })
+});
+
+app.get('/questions', (req, res) => {
+  allQuestion()
+    .then((rows) => {
+      res.render('questions', { rows })
+    })
     .catch((error) => {
       console.log(error);
       res.status(500).send();
+    });
+});
+
+app.get('/api/questions', (req, res) => {
+  allQuestion()
+    .then((rows) => {
+      res.send({ rows });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send();
+    });
+});
+
+app.get('/api/game', (req, res) => {
+  let specID
+  let question
+  allID()
+    .then((idList) => {
+      specID = idList[getARandomNumber(0, idList.length - 1)];
+      return randQuest(specID);
+    })
+    .then((rows) => {
+      question = rows;
+      return answer(specID);
+    })
+    .then((answers) => {
+      res.send({
+        id: specID,
+        question: question[0].question,
+        answer: answers
+      });
     })
 });
-
-
-
-app.get('/questions', (req, res) => {
-  res.render('questions', { basic: '' })
-});
-
 
 const allID = () => {
   return new Promise((res, rej) => {
@@ -64,6 +96,18 @@ const allID = () => {
       } else {
         let idList = rows.map(element => element.id)
         res(idList)
+      }
+    });
+  });
+}
+
+const allQuestion = () => {
+  return new Promise((res, rej) => {
+    conn.query(`SELECT * FROM questions`, (err, rows) => {
+      if (err) {
+        rej(err);
+      } else {
+        res(rows)
       }
     });
   });
@@ -87,8 +131,8 @@ function getARandomNumber(min, max) {
 }
 
 const answer = (id) => {
-  return new Promise((res, rej) => {    
-    conn.query(`SELECT answer, is_correct FROM answers WHERE question_id=?;`, [id],
+  return new Promise((res, rej) => {
+    conn.query(`SELECT * FROM answers WHERE question_id=?;`, [id],
       (err, rows) => {
         if (err) {
           rej(err);
