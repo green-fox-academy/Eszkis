@@ -88,6 +88,23 @@ app.get('/api/game', (req, res) => {
     })
 });
 
+app.post('/api/questions', (req, res) => {
+  let data = req.body
+  let newId
+  addNewQuestion(data.question)
+    .then((id) => {
+      newId = id
+      return addNewAnswers(data.answers, newId)
+    })
+    .then((event) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send();
+    });
+});
+
 const allID = () => {
   return new Promise((res, rej) => {
     conn.query(`SELECT id FROM questions`, (err, rows) => {
@@ -133,6 +150,31 @@ function getARandomNumber(min, max) {
 const answer = (id) => {
   return new Promise((res, rej) => {
     conn.query(`SELECT * FROM answers WHERE question_id=?;`, [id],
+      (err, rows) => {
+        if (err) {
+          rej(err);
+        } else {
+          res(rows);
+        }
+      });
+  });
+};
+
+const addNewQuestion = (question) => {
+  return new Promise((res, rej) => {
+    conn.query('INSERT INTO questions (question) VALUES (?);', [question], (err, insInfo) => {
+      if (err) {
+        rej(err);
+      } else {
+        res(insInfo.insertId);
+      }
+    });
+  });
+};
+
+const addNewAnswers = (answers, id) => {
+  return new Promise((res, rej) => {
+    conn.query(`INSERT INTO answers(question_id, answer, is_correct) VALUES (${conn.escape(id)}, ${conn.escape(answers[0].answer)}, ${conn.escape(answers[0].is_correct)}), (${conn.escape(id)}, ${conn.escape(answers[1].answer)}, ${conn.escape(answers[1].is_correct)}), (${conn.escape(id)}, ${conn.escape(answers[2].answer)}, ${conn.escape(answers[2].is_correct)}), (${conn.escape(id)}, ${conn.escape(answers[3].answer)}, ${conn.escape(answers[3].is_correct)})`,
       (err, rows) => {
         if (err) {
           rej(err);
