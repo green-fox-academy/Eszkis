@@ -9,13 +9,13 @@
 
 <body>
   <div class="main">
-    <h2>Score: n</h2>
+    <h2>Score: <%= score %></h2>
     <div class="questions">
-      <p class="question">questions</p>
-      <button class="answ1">answer1</button>
-      <button class="answ2">answer2</button>
-      <button class="answ3">answer3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</button>
-      <button class="answ4">answer4</button>
+      <p class="question"><%= question[0].question %></p>
+      <button data-correct="<%= answers[0].is_correct %>" class="answ1"><%= answers[0].answer %></button>
+      <button data-correct="<%= answers[1].is_correct %>" class="answ2"><%= answers[1].answer %></button>
+      <button data-correct="<%= answers[2].is_correct %>" class="answ3"><%= answers[2].answer %></button>
+      <button data-correct="<%= answers[3].is_correct %>" class="answ4"><%= answers[3].answer %></button>
     </div>
     <a href="./questions">Manage questions</a>
   </div>

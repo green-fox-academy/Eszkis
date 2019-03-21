@@ -25,9 +25,76 @@ app.listen(port, () => {
 })
 
 app.get('/game', (req, res) => {
-  res.render('main', { basic: '' })
+  let specID
+  let question
+  allID()
+    .then((idList) => {
+      specID = idList[getARandomNumber(0, idList.length - 1)];      
+      return randQuest(specID);
+    })
+    .then((rows) => {
+      question = rows;
+      return answer(specID);
+    })
+    .then((answers) => {    
+      res.render('main', {
+        score: 0,
+        question: question,
+        answers: answers
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send();
+    })
 });
+
+
 
 app.get('/questions', (req, res) => {
   res.render('questions', { basic: '' })
 });
+
+
+const allID = () => {
+  return new Promise((res, rej) => {
+    conn.query(`SELECT id FROM questions`, (err, rows) => {
+      if (err) {
+        rej(err);
+      } else {
+        let idList = rows.map(element => element.id)
+        res(idList)
+      }
+    });
+  });
+}
+
+const randQuest = (id) => {
+  return new Promise((res, rej) => {
+    conn.query(`SELECT id, question FROM questions WHERE id=?;`, [id],
+      (err, rows) => {
+        if (err) {
+          rej(err);
+        } else {
+          res(rows);
+        }
+      });
+  });
+};
+
+function getARandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+const answer = (id) => {
+  return new Promise((res, rej) => {    
+    conn.query(`SELECT answer, is_correct FROM answers WHERE question_id=?;`, [id],
+      (err, rows) => {
+        if (err) {
+          rej(err);
+        } else {
+          res(rows);
+        }
+      });
+  });
+};
