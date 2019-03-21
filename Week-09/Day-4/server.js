@@ -24,6 +24,10 @@ app.listen(port, () => {
   console.log(`Server is running at port: ${port}`);
 })
 
-app.get('/', (req, res) => {
+app.get('/game', (req, res) => {
   res.render('main', { basic: '' })
+});
+
+app.get('/questions', (req, res) => {
+  res.render('questions', { basic: '' })
 });
