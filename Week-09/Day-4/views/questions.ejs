@@ -12,8 +12,8 @@
     <h2 class="manage">Manage Questions</h2>
     <ul>
       <% rows.forEach(element=>{%>
-      <li>
-        <p data-id="<%= element.id %>"><%= element.question %></p>
+      <li data-id="<%= element.id %>">
+        <p><%= element.question %></p>
         <button class="delete">delete</button>
       </li>
       <%});%>

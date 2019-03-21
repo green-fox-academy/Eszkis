@@ -38,6 +38,13 @@ submit.addEventListener('click', (event) => {
 
 deleteButtons.forEach(element => {
   element.addEventListener('click', () => {
-
+    let id = element.parentElement.getAttribute('data-id');
+    element.parentElement.parentElement.removeChild(element.parentElement);
+    const req = new XMLHttpRequest();
+    req.open('DELETE', `http://localhost:3000/api/questions/${id}`);
+    req.setRequestHeader('Content-Type', 'application/json');
+    req.send();
+    console.log(`http://localhost:3000/api/questions/${id}`);
+    
   });
 });

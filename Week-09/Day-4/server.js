@@ -105,6 +105,46 @@ app.post('/api/questions', (req, res) => {
     });
 });
 
+app.delete('/api/questions/:id', (req, res) => {
+  console.log('start to delete');
+  const id = req.params;
+  delQuestion(id)
+    .then(() => delAnwers(id))
+    .then(() => {
+      res.send('OK');
+      console.log('ok');
+
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send();
+    });
+});
+
+const delQuestion = (id) => {
+  return new Promise((res, rej) => {
+    conn.query(`DELETE FROM questions WHERE id=${mysql.escape(id)};`, (err, rows) => {
+      if (err) {
+        rej(err);
+      } else {
+        res(rows)
+      }
+    });
+  });
+}
+
+const delAnwers = (id) => {
+  return new Promise((res, rej) => {
+    conn.query(`DELETE FROM answers WHERE question_id=${mysql.escape(id)};`, (err, rows) => {
+      if (err) {
+        rej(err);
+      } else {
+        res(rows)
+      }
+    });
+  });
+}
+
 const allID = () => {
   return new Promise((res, rej) => {
     conn.query(`SELECT id FROM questions`, (err, rows) => {
