@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/questions.css">
+  <title>Questions</title>
+</head>
+
+<body>
+  <div class="main">
+    <h2 class="manage">Manage Questions</h2>
+    <ul>
+      <% rows.forEach(element=>{%>
+      <li data-id="<%= element.id %>">
+        <p><%= element.question %></p>
+        <button class="delete">delete</button>
+      </li>
+      <%});%>
+    </ul>
+    <h2 class="create">Create a new question</h2>
+    <form>
+      <input class="quest" type="text" required placeholder="Type your question here">
+      <p>Answers</p>
+      <label class="lab1" for="inp1" class="p1">#1</label>
+      <input name="inp1" class="inp1 answer" type="text" required placeholder="Type your answer here">
+      <input class="rad1 correct" type="radio" required name="answer">
+      <label class="lab2" for="inp2" class="p2">#2</label>
+      <input name="inp2" class="inp2 answer" type="text" required placeholder="Type your answer here">
+      <input class="rad2 correct" type="radio" required name="answer">
+      <label class="lab3" for="inp3" class="p3">#3</label>
+      <input name="inp3" class="inp3 answer" type="text" required placeholder="Type your answer here">
+      <input class="rad3 correct" type="radio" required name="answer">
+      <label class="lab4" for="inp4" class="p4">#4</label>
+      <input name="inp4" class="inp4 answer" type="text" required placeholder="Type your answer here">
+      <input class="rad4 correct" type="radio" required name="answer">
+      <button class="button" type="submit">Submit</button>
+    </form>
+    <a href="./game">Go back to the game</a>
+  </div>
+  <script src="../static/js/questions.js"></script>
+</body>
+
+</html>

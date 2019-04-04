@@ -14,5 +14,5 @@ app.listen(port, () => {
   console.log(`Server is running at port: ${port}`);
 })
 app.get('/', (req, res) => {
-  res.send(JSON.stringify({response:'Hello world!'}));
+  res.json({response:'Hello world!'});
 });
