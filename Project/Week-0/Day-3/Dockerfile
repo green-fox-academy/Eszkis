@@ -7,4 +7,6 @@ COPY . /app
 
 RUN npm install
 
+RUN npm start
+
 EXPOSE 8080
