@@ -49,7 +49,7 @@ app.post('/api/users', (req, res) => {
 
 const allData=()=>{
   return new Promise((res, rej) => {
-    conn.query(`SELECT * FROM users`, (err, rows) => {
+    conn.query(`SELECT * FROM users ORDER BY id`, (err, rows) => {
       if (err) {
         rej(err);
       } else {
