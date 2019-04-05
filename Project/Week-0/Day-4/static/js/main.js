@@ -1,4 +1,5 @@
 let buttons = document.querySelectorAll('button');
+const servername= 'http://quiztest.us-east-2.elasticbeanstalk.com'
 
 buttons.forEach(element => {
   element.addEventListener('click', event => {
@@ -16,10 +17,9 @@ console.log(buttons);
 
 const nextQuestion = () => {
   const req = new XMLHttpRequest();
-  req.open('GET', 'http://localhost:3000/game');
+  req.open('GET', `${servername}`);
   req.addEventListener('load', (event) => {
     console.log('good answer');
-
   });
   req.setRequestHeader('Content-Type', 'application/json');
   req.send();

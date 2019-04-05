@@ -26,9 +26,8 @@ app.listen(port, () => {
 })
 
 app.get('/',(req,res)=>{
-res.json({answer: 'Hello World'})
+  res.json({answer: 'Hello World'})
 });
-
 
 app.get('/game', (req, res) => {
   let specID

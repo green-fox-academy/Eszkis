@@ -1,5 +1,6 @@
 let submit = document.querySelector('.button');
 let deleteButtons = document.querySelectorAll('.delete')
+const servername= 'http://quiztest.us-east-2.elasticbeanstalk.com'
 
 function getQuestion() {
   let question = document.querySelector('.quest');
@@ -31,7 +32,7 @@ function getData() {
 submit.addEventListener('click', (event) => {
   event.preventDefault();
   const req = new XMLHttpRequest();
-  req.open('POST', 'http://localhost:3000/api/questions');
+  req.open('POST', `${servername}`);
   req.setRequestHeader('Content-Type', 'application/json');
   req.send(JSON.stringify(getData()));
 });
@@ -41,10 +42,9 @@ deleteButtons.forEach(element => {
     let id = element.parentElement.getAttribute('data-id');
     element.parentElement.parentElement.removeChild(element.parentElement);
     const req = new XMLHttpRequest();
-    req.open('DELETE', `http://localhost:3000/api/questions/${id}`);
+    req.open('DELETE', `${servername}/${id}`);
     req.setRequestHeader('Content-Type', 'application/json');
     req.send();
-    console.log(`http://localhost:3000/api/questions/${id}`);
-    
+    console.log(`${servername}/${id}`);
   });
 });
