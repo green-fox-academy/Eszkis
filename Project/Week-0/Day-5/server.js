@@ -10,7 +10,8 @@ const conn = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE
+  database: process.env.DB_DATABASE,
+  port: process.env.DB_PORT
 });
 
 app.use(express.json())
@@ -30,19 +31,19 @@ app.get('/', (req, res) => {
     )
     .catch((error) => {
       console.log(error);
-      res.status(500).send();
+      res.status(500).send(error);
     })
 });
 
 app.post('/api/users', (req, res) => {
   let data = req.body;
-  register(data.email)
+  register(data)
     .then((rows) => {
       return rows
     })
     .catch((error) => {
       console.log(error);
-      res.status(400).send();
+      res.status(400).send(error);
     })
 });
 
