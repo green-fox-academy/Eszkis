@@ -7,11 +7,11 @@ const mysql = require('mysql');
 const env = require('dotenv');
 env.config();
 const conn = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
-  port: process.env.DB_PORT
+  host: process.env.RDS_HOST,
+  user: process.env.RDS_USER,
+  password: process.env.RDS_PASSWORD,
+  database: process.env.RDS_DATABASE,
+  port: process.env.RDS_PORT
 });
 
 app.use(express.json())
