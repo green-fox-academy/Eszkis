@@ -39,9 +39,7 @@ class Aircraft {
       this.allDmg = this.ammoStorage * this.baseDMG;
       ammoNumber = 0;
       return ammoNumber;
-
     }
-
   }
 
   getType() {
@@ -49,7 +47,8 @@ class Aircraft {
   }
 
   getStatus() {
-    return `Type ${this.type}, Ammo: ${this.ammoStorage}, Base Damage: ${this.baseDMG}, All Damage: ${this.allDmg}`;
+    return `Type ${this.type}, Ammo: ${this.ammoStorage}, 
+    Base Damage: ${this.baseDMG}, All Damage: ${this.allDmg}`;
   }
 
   isPriority() {
@@ -120,7 +119,8 @@ class Carrier {
     if (this.HP <= 0) {
       console.log(`It's dead Jim`);
     } else {
-      console.log(`HP: ${this.HP}, Aircraft count: ${this.aircrafts.length}, AmmoStorage: ${this.ammoStorage}, Total damage: ${this.allDmg}`);
+      console.log(`HP: ${this.HP}, Aircraft count: ${this.aircrafts.length}, 
+      AmmoStorage: ${this.ammoStorage}, Total damage: ${this.allDmg}`);
       this.aircrafts.forEach(aircraft => console.log(aircraft.getStatus()));
     }
   }
