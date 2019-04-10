@@ -4,7 +4,7 @@
 
 Go to [Dockerhub](https://hub.docker.com/) and log in with you username, and password. Then you need to go the "Repositories" menu, in the top right corner.
 
-<img src="Images/Dockerhub_repo.xcf">
+<img src="Images/Dockerhub_repo.png">
 
 Here you hae to click on "Create Repository" button to start makeing your first Dockerhub repo. Here you have to give a name to you repo. After that you need to decide, what kind of visibility do you want to give to this repo. There is an optinon to connect your repo to Github or Bitbucket. After everyhing is given click on the "Create" button and your repo is complete.
 
