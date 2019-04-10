@@ -19,5 +19,10 @@ After this you can continue the new user set up, by clicking on the "Next:Permis
 ### Set permissions
 In this site, you can assign permissions to the users 3 different way.
 #### Add user to group
+Select "Add user to group", by clicking in the button.
+This way you can add the user to an existing group, or create a new group.
+To select a group check the box next to it's name. If you are interested in the permissions, you can click on next to the group name to the under the  "Atteched policies"
+To create new group click on the "Create group" button. In the pop up window you have to give a name to the roup, and select the policies to the group. You can seach for a policy by write it's name in the search bar. You can add a policy by check the box next to the policy name in the left. After all needed policies added to the group, click on the "Create group" button. After clicking the pop up window will disappear. The new group will be in the group list, and can be selected.
 #### Copy permissions from existing user
+
 #### Attach existing policies directly
