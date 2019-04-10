@@ -7,7 +7,7 @@ https://aws.amazon.com/console/
 
 After signed in successfully, press "Services" button in the top left corner. Find IAM in the "Security, Identity, & Compliance" group, or simply write "IAM" in the search bar. If you click on the found link, it should  bring you to a similar site.
 
-[<img src="Images/Security, Identity, & Compliance.png">]
+<img src="Images/Security, Identity, & Compliance.png">
 
 ## Create new user
 
