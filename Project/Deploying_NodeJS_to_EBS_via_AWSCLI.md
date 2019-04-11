@@ -5,7 +5,7 @@ The following AWS site helps you to install EB CLI to your computer. It has a co
 
 ## Require your access id and secret key from AWS
 
-Log in to your account in aws, then go to IAM setup page. It should look like this:
+Log in to your account in aws, then go to IAM set up page. It should look like this:
 
 <img src='Images/aws_IAM_page.png'>
 
@@ -14,7 +14,58 @@ Here click on "Activate MFA on your root account" and then to "Manage MFA". Here
 ## Create a foldel for your EB, and start setting up your application
 
 Useing your console, create a folder in you computer, which will be used for EB. 
-After the folder is created, you need to enter into it. Using the command line you need to setup your new EB application by entering the following command:
+After the folder is created, you need to enter into it. Using the command line you need to set up your new EB application by entering the following command:
 
 ``` eb init ```
 
+### Region selection
+
+Fist you have to select the Region you would like to set up you application. The following lines will be showed in your command line, and you have to select one from it.
+
+```
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) us-east-2 : US East (Columbus)
+14) ca-central-1 : Canada (Central)
+15) eu-west-2 : EU (London)
+(default is 3):
+```
+
+You can select one Region by write it's number into console, and hit enter.
+
+### Addin your Access key ID, and Secret access key
+
+Console will ask for your access key ID, and Secret access key. You can type in the codes, or use the "Shift+Ins" paste the code in.
+
+```You have not yet set up your credentials or your credentials are incorrect
+You must provide your credentials.
+(aws-access-id): AKIAJOUAASEXAMPLE
+(aws-secret-key): 5ZRIrtTM4ciIAvd4EXAMPLEDtm+PiPSzpoK
+```
+
+### Give your application a name
+
+After giving your keys you need to name your new application. It will have a default name based on your folder name. If you want you can change it to anything you want, as long as it's no used by someone else.
+
+```
+Enter Application Name
+(default is "aws_with_docker"): 
+Application aws_with_docker has been created.
+```
+
+### Platform selection
+
+
+
+### Set up SSH
