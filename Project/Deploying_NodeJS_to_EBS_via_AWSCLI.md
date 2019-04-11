@@ -60,8 +60,8 @@ After giving your keys you need to name your new application. It will have a def
 
 ```
 Enter Application Name
-(default is "aws_with_docker"): 
-Application aws_with_docker has been created.
+(default is "aws_with_node"): 
+Application aws_with_node has been created.
 ```
 
 ### Platform selection
