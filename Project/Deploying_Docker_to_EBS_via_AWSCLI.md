@@ -3,7 +3,7 @@
 
 The following AWS site helps you to install EB CLI to your computer. It has a complete solution for Window, macOS, Linux, or even virtualenv. To fisit the site clink on the [link](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
 
-## Require your access id and secret key from AWS
+## Require your access id and secret key from AWSUtilizing_artifact_repositories2
 
 Log in to your account in aws, then go to IAM set up page. It should look like this:
 
@@ -66,7 +66,7 @@ Application aws_with_docker has been created.
 
 ### Platform selection
 
-Next you need to select what kind of platfrom do you want to run on AWS EB. A list of choice will appear in console, and you have to choose from it, as you did in the Region selection. For Node.js you have to write 1.
+Next you need to select what kind of platfrom do you want to run on AWS EB. A list of choice will appear in console, and you have to choose from it, as you did in the Region selection. For Node.js you have to write 7.
 
 ```
 Select a platform.
