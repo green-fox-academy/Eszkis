@@ -66,6 +66,84 @@ Application aws_with_docker has been created.
 
 ### Platform selection
 
+Next you need to select what kind of platfrom do you want to run on AWS EB. A list of choice will appear in console, and you have to choose from it, as you did in the Region selection.
 
+```
+Select a platform.
+1) Node.js
+2) PHP
+3) Python
+4) Ruby
+5) Tomcat
+6) IIS
+7) Docker
+8) Multi-container Docker
+9) GlassFish
+10) Go
+11) Java
+(default is 1):
+```
 
 ### Set up SSH
+
+Later you can choose to set up SSH for your instances. It is not mandatory.
+
+```
+Do you want to set up SSH for your instances?
+(y/n): n
+```
+
+## Deploy your application
+
+### Run own program, or choose example application
+
+Before deploy application you need to copy all files, and folder into the created folder. If you dont have any, then the process will use the basic application provided by AWS.
+
+### Set up AWS resources to run application
+
+You can do it simply by typeing in the following code into console.
+
+```
+eb create
+```
+
+### Enter enviroment name
+
+You need to give a name to your application. It has a default name, but you can change it, as long there is no other application that is useing the same name. It will look like this:
+
+```
+Enter Environment Name
+(default is sample-app-dev):
+```
+
+### Choose DNC Cname
+
+You need to give a URL to your application. It has a default URL, but you can change it, as long there is no other application that is useing the same name. It will look like this:
+
+```
+Enter DNS CNAME prefix
+(default is sample-app-dev): 
+```
+
+### Choose balancer type
+
+After you gave name to you application you need to select the load balancer. For basic server I reccomend "network". You can choose it by write in the number of the selected balancer.
+
+```
+Select a load balancer type
+1) classic
+2) application
+3) network
+(default is 1): 1
+```
+### Finish 
+
+If everthing went as we planned, it will take a few minutes to set up the whole thing. It is totally fine to wait 5-10 minutes. In the end console will show us the following message:
+
+```
+INFO: Successfully Launched Environment:
+```
+
+### Extra info
+
+If you want to know more how to monitor, and shut down your server, click on the following [link](https://aws.amazon.com/getting-started/tutorials/deploy-app-command-line-elastic-beanstalk/).
