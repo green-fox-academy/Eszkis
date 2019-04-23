@@ -1,0 +1,1 @@
+# Static files in the cloud
