@@ -16,7 +16,7 @@ In the next page you can choose the "use case". Depending on what you going to u
 
 ### Specify DB details
 
-In the next page you can specify DB details, which mean that you can choose capacity type, DB engine verison,  DB instance class and Multi-AZ deployment. For easy setup you sould choose "Serverless" capacty type. This will scale resources based on your workload.
+In the next page you can specify DB details, which mean that you can choose capacity type, DB engine verison,  DB instance class and Multi-AZ deployment. For easy setup you sould choose "Provisioned" capacty type. Default engine version is good for example purpose. Select no under "Multi-AZ deployment" option.
 
 Next you need to add "Master username", "Master password" and "DB cluster identifier". You need these information later, to connect to the DB. After that you need to click on the "Next" button.
 
@@ -24,7 +24,9 @@ Next you need to add "Master username", "Master password" and "DB cluster identi
 
 ### Configure advanced settings
 
-Here you need to configure your advenced settings for your DB. For basic useage, and testing I reccomend to leave everything as it is. All you need now is to click on "Create database" button on the bot right corner, and your DB is running.
+In this page you can set up various things, but for the example you only need to set the "Database options".
+After that look for Public accessibility, and set it to yes, so you can access it outside AWS.
+Here you need to add "DB cluster identifier" and "Database name". If you set everything up you need to click on "Create database" button, and AWS will create it for you. It could take a few minutes.
 
 ## Communicate with your RDS
 
@@ -48,5 +50,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
 
 mysql>
 ```
+Here you can use basic MYSQL code, to create, add, delete, read data from our DB.
 
+### extra info
 If you need more help, go to this [link](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToInstance.html).
