@@ -103,9 +103,7 @@ Before deploy application you need to copy all files, and folder into the create
 
 You can do it simply by typeing in the following code into console.
 
-```
-eb create
-```
+```eb create```
 
 ### Enter enviroment name
 
