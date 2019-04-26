@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-AWS IAM user with the following permissions:
+AWS IAM user with the following permissions:<br/>
                                       - AmazonRDSFullAccess<br/>
                                       - AmazonEC2FullAccess<br/>
                                       - AmazonS3FullAccess<br/>
