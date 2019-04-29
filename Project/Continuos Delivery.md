@@ -3,13 +3,13 @@
 ## Prerequisites
 
 AWS IAM user with the following permissions:<br/>
-                                      - AmazonRDSFullAccess<br/>
-                                      - AmazonEC2FullAccess<br/>
-                                      - AmazonS3FullAccess<br/>
-                                      - AWSCodeDeployFullAccess<br/>
-                                      - AWSElasticBeanstalkFullAccess<br/>
-                                      - AmazonRDSDataFullAccess<br/>
-                                      - AmazonEC2ContainerServiceFullAccess<br/>
+- AmazonRDSFullAccess<br/>
+- AmazonEC2FullAccess<br/>
+- AmazonS3FullAccess<br/>
+- AWSCodeDeployFullAccess<br/>
+- AWSElasticBeanstalkFullAccess<br/>
+- AmazonRDSDataFullAccess<br/>
+- AmazonEC2ContainerServiceFullAccess<br/>
 
 You will also need the following: Jenkins, Jenkins credentials for AWS IAM user, and for GitHub GitHub repo.
 
