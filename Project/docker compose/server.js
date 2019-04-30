@@ -27,11 +27,9 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   createTable()
     .then((rows) => {
-      console.log('DB table is created');
       console.log(rows);
     })
     .catch((error) => {
-      console.log('DB table creation is failed');
       console.log(error);
     })
   allData()
@@ -77,10 +75,8 @@ const createTable = () => {
       PRIMARY KEY (id)
      ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;`, (err, rows) => {
       if (err) {
-        console.log('createTable failed');
         rej(err);
       } else {
-        console.log('createTable success');
         res(rows);
       }
     });
