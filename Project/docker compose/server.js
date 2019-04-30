@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 8000;
 const mysql = require('mysql');
 const env = require('dotenv');
 env.config();
@@ -22,18 +22,18 @@ app.use('/static', express.static('static'));
 
 app.listen(port, () => {
   console.log(`Server is running at port: ${port}`);
-  createTable()
-    .then((rows)=>{
-      console.log('DB table is created');
-      console.log(rows);
-    })
-    .catch((error)=>{
-      console.log('DB table creation is failed');
-      console.log(error);
-    })
 });
 
 app.get('/', (req, res) => {
+  createTable()
+    .then((rows) => {
+      console.log('DB table is created');
+      console.log(rows);
+    })
+    .catch((error) => {
+      console.log('DB table creation is failed');
+      console.log(error);
+    })
   allData()
     .then((rows) =>
       res.render('main', { rows })
@@ -69,12 +69,14 @@ const allData = () => {
 };
 
 const createTable = () => {
-  console.log('Started to create new table');  
+  console.log('Started to create new table');
   return new Promise((res, rej) => {
     conn.query(`SOURCE data.sql`, (err, rows) => {
       if (err) {
+        console.log('createTable failed');
         rej(err);
       } else {
+        console.log('createTable success');
         res(rows);
       }
     });
