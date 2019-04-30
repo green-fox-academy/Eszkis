@@ -71,7 +71,11 @@ const allData = () => {
 const createTable = () => {
   console.log('Started to create new table');
   return new Promise((res, rej) => {
-    conn.query(`SOURCE data.sql`, (err, rows) => {
+    conn.query(`CREATE TABLE IF NOT EXISTS users (
+      id INT NOT NULL AUTO_INCREMENT,
+      userName varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+      PRIMARY KEY (id)
+     ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;`, (err, rows) => {
       if (err) {
         console.log('createTable failed');
         rej(err);
