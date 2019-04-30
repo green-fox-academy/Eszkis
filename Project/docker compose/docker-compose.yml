@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   db:
     image: mysql:8.0.2
     environment:
@@ -10,7 +9,6 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "8080:3306"
-
   web:
     build: .  
     ports:
