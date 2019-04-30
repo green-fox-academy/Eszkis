@@ -9,4 +9,4 @@ RUN npm install
 
 EXPOSE 8000
 
-CMD ["node","server_test.js"]
+CMD ["node","server.js"]

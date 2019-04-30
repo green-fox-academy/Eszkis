@@ -6,6 +6,8 @@ services:
     environment:
       MYSQL_DATABASE: usersDB
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: eszkis
+      MYSQL_PASSWORD: password
     ports:
       - "8080:3306"
 
@@ -14,4 +16,6 @@ services:
     ports:
       - "8000:8000"
     depends_on:
+      - db
+    links:
       - db
