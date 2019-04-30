@@ -25,9 +25,11 @@ app.listen(port, () => {
   createTable()
     .then((rows)=>{
       console.log('DB table is created');
+      console.log(rows);
     })
     .catch((error)=>{
       console.log('DB table creation is failed');
+      console.log(error);
     })
 });
 
@@ -67,6 +69,7 @@ const allData = () => {
 };
 
 const createTable = () => {
+  console.log('Started to create new table');  
   return new Promise((res, rej) => {
     conn.query(`SOURCE data.sql`, (err, rows) => {
       if (err) {
