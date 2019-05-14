@@ -4,5 +4,6 @@ package-lock.json
 eszkis_ec2_test.pem
 .elasticbeanstalk
 .terraform
-terraform.tfstate
+terraform.tfstate.backup
 terraform.tf
+terraform.tfstate
