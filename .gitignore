@@ -3,3 +3,5 @@ package-lock.json
 .env
 eszkis_ec2_test.pem
 .elasticbeanstalk
+terraform
+.terraform
