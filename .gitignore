@@ -7,3 +7,5 @@ eszkis_ec2_test.pem
 terraform.tfstate.backup
 terraform.tf
 terraform.tfstate
+script.sh
+*.tfstate
