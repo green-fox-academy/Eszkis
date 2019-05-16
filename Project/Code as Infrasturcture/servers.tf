@@ -1,4 +1,4 @@
-resource "aws_instance" "test-ec2-instance" {
+/* resource "aws_instance" "test-ec2-instance" {
   ami = "${var.ami_id[0]}"
   instance_type = "t2.micro"
   key_name = "${var.ami_key_pair_name}"
@@ -7,11 +7,20 @@ tags {
     Name = "${var.ami_name}"
   }
 subnet_id = "${aws_subnet.subnet-uno.id}"
+provisioner "remote-exec" {
+  inline = ["# Connected!"]
+} */
 /* provisioner "remote-exec" {
     inline = [
       "echo csá"
     ]
-} */
+    connection {
+   type = "ssh" 
+   user = "ec2-user"
+//   private_key = "${file("./test1.pem")}"
+  }
+  }  */
+
 /* 
 provisioner "remote-exec" {
     inline = [
@@ -30,4 +39,4 @@ connection {
    private_key = "${file("~/Greenfox/Eszkis/Project/Code as Infrasturcture/test1.pem")}"
   }
   } */
-}
+/* } */
