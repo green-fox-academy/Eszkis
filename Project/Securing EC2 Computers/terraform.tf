@@ -18,10 +18,6 @@ resource "aws_instance" "staging" {
     inline = [
       "chmod +x /tmp/script.sh",
       "/tmp/script.sh args",
-/*       "sudo passwd ec2-user",
-      "${var.password}",
-      "sudo nano /etc/ssh/sshd_config",
-      "sudo systemctl reload sshd", */
     ]
   }
 }
