@@ -12,7 +12,6 @@ eszkis_ec2_test.pem
 .elasticbeanstalk
 .terraform
 *.tfstate.backup
-terraform.tf
 *.tfstate
 variables.tf
 *.pem

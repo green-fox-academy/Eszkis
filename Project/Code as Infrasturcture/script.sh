@@ -8,4 +8,6 @@ sudo yum install -y git
 git clone https://github.com/green-fox-academy/malachite_ops_adam_ec2.git
 cd malachite_ops_adam_ec2
 npm install
-node hello.js
+npm install pm2 -g
+echo start
+pm2 start hello.js
