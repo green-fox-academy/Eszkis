@@ -15,16 +15,16 @@ resource "aws_security_group" "ec2-allow-ssh" {
   }
 
   ingress{
-    from_port=9005
-    to_port=9005
+    from_port=80
+    to_port=80
 
     protocol = "tcp"
     cidr_blocks= ["0.0.0.0/0"]
   }
 
   ingress{
-    from_port=80
-    to_port=80
+    from_port=5601
+    to_port=5601
 
     protocol = "tcp"
     cidr_blocks= ["0.0.0.0/0"]
