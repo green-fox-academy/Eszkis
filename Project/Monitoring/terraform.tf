@@ -1,13 +1,10 @@
-resource "aws_instance" "meglotisDev" {
+resource "aws_instance" "megalotisDev" {
   ami = "${var.ami_id}"
   instance_type = "t2.medium"
   key_name = "${var.ami_key_pair_name}"
   security_groups=["${aws_security_group.ec2-allow-ssh.name}"]
   tags = {
-    Name ="meglotisDev"
-  }
-  provisioner "local-exec" {
-    command ="echo hello"
+    Name ="megalotisDev"
   }
   connection {
    type = "ssh" 
