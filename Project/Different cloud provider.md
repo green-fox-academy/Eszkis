@@ -21,3 +21,6 @@ Here you can choose to Create, Import, or Take a quickstart. To select specifica
 
 
 ## Cloud Storage
+
+It is simmilar to AWS's S3 bucket service. You can create your own bucket, or click on Take a quickstart to make a bucket with default settings. 
+You can set name, Default storae class( Multi-regional, Regional, Nearline, Coldline), Location depanding on Default storae class, and Access control model, and some advanced settings. In the end Google Cloud will show you the cost. After clicking on the create button, you can upload files through site, or with console.
