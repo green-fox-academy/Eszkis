@@ -1,4 +1,5 @@
 # Final exam requirement
+
 ## Endpoint
 ### params
 ### header
@@ -49,14 +50,57 @@
 
 ## Compose
 ### using volumes
+
+Docker volumes is a folder that lives outside the container. Through this folder you can add, delete, and modify files in your container. Example if you need to add a file in a container while it is running, then add it to the volume folder.
+
+To create volumes, you need to give the container to folder. First is where the folder/file is in your host computer, second is where the folder/file is in your container.
+``` host_folder:container_folder```
+
+
 ### using compose.yml
+
+It is used to run multiple container beside eah other. This way you can connect them together, and set a multicomponenet application. If one of the container collapse, you just need to restart that specific one, not all of them.
+
+[Basic compose file](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Docker%20compose.md)
+
 ### start and stop containers
+
+Run this command in the folder where the compose.yml file is. Build up everything from scratch.
+
+```docker-compose up``` 
+
+Run this command in the folder where the compose.yml file is. Stop the containers, end delet every volumes, connections.
+
+```docker-compose down```
+
+Start a containers connected together. The containers need to be built before it.
+
+```docker-compose start```
+
+Stops continers that are running, but dont destroies it. Later you are able to start these continers.
+
+```docker-compose stop```
 
 ## Cloud
 ### Deploy to EBS
+
+You can deploy to ebs via console or website. For both of them ou need an AWS IAM user or root user(IAM user is better), and an application. 
+
+[AWSCLI deploy](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Deploying_Docker_to_EBS_via_AWSCLI.md)<br/>
+
+[Website deploy](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html)
+
 ### Manage EBS of EC2 instance
+
+You can manage EBS of EC2 similar like a simple EBS. When creating EC2, an EBS also created with same name as EC2 Name. You can change EBS parameters in EBS services. If you need to delete it, you need to delete EC2 also.
+
 ### Push files to S3
+
+[Basic S3 bucket setup](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Static%20files%20in%20the%20cloud.md)
+
 ### Manage an RDS instance
+
+[Basic RDS setup](https://github.com/green-fox-academy/Eszkis/blob/master/Project/DB%20in%20the%20cloud.md)
 
 ## CI Advanced
 ### Create new Jenkins job
