@@ -44,9 +44,57 @@
 
 ## Container
 ### Create image using Dockerfile
+
+To create a Docker image you need a docker file. If you want to create a container with your own server, you need the files in the same folder as your Docker file, or a Repository. 
+
+The docker file need to contain the following things: <br/>
+  - what type of OP system should it run<br/>
+  - what command should it run<br/>
+  - from where should it copy the program files, and to where<br/> 
+  - which port should it open to the outworld<br/>
+  - command to start the application<br/>
+
+After you have the docker file, you need to run a basic command in your console. With your console go to the folder that contains the docker file and run this.
+
+```docker build .```
+
+After the image is build you get back the image ID.
+
 ### Start / stop containers (using doom is ok :D)
+
+You can run image that is in your computer, or in the internet. You need to run the following command.
+
+```docker run image_name```
+
+For image_name you can use image id, or 'repository':'tag'.
+
+To stop a running container you need the containers's ID. You need to type in the following command.
+
+```docker stop container_id```
+
 ### Push and Pull from dockerhub
+
+To pull an image, you need it's repository's name, and tha image's tag. If you have both you can pull it with the follwong command.
+
+```docker pull repository:image_tag```
+
+To push an image, you need repository which you have access to, and an image. First you need to tag the image with the follwing command.
+
+```docker tag image_name/image_ID tag_name```
+
+After you taged the image, to push it you need the following command.
+
+```docker push repository_name:image_tag```
+
 ### Set environment variables and ports
+
+If you want to open a port on the container, you need to add a '-p host_port:container:port' optional parameter to the run command.
+
+```docker run example_image -p host_port:container:port```
+
+For enviroment variable you can also use an optinal parameter on run command. This parameter is '-e variable_name= example_value'.
+
+```docker run example_image -e POSTGRES_ENV_POSTGRES_PASSWORD='foo'```
 
 ## Compose
 ### using volumes
@@ -54,8 +102,8 @@
 Docker volumes is a folder that lives outside the container. Through this folder you can add, delete, and modify files in your container. Example if you need to add a file in a container while it is running, then add it to the volume folder.
 
 To create volumes, you need to give the container to folder. First is where the folder/file is in your host computer, second is where the folder/file is in your container.
-``` host_folder:container_folder```
 
+```host_folder:container_folder```
 
 ### using compose.yml
 
@@ -67,7 +115,7 @@ It is used to run multiple container beside eah other. This way you can connect 
 
 Run this command in the folder where the compose.yml file is. Build up everything from scratch.
 
-```docker-compose up``` 
+```docker-compose up```
 
 Run this command in the folder where the compose.yml file is. Stop the containers, end delet every volumes, connections.
 
