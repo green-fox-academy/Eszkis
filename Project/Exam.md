@@ -2,10 +2,39 @@
 
 ## Endpoint
 ### params
+
+Usualy used for search. Dinamicly change with every search.
+
 ### header
+
+- req egy része, tartalmazhat információt<br/>
+- csomag címzése, minden más adat a requesttel kapcsolatban<br/>
+- content-type, status code, token, <br/>
+- Specifys some informations and rules about the data e.g.:Host, Accept-language,Accept<br/>
+- Optional to add header in http<br/>
+- Key-value pairs<br/>
+-  form depends if its request or response<br/>
+
 ### body
+
+- req része, abban van az payload maga, amit küldünk
+- Optional to add body to http
+- It contains every other/plus information about the data
+
 ### request / response
+
+- request contains the detail what we want to ask from the server, browser sends it to the server, 
+- http method: 
+- URL
+- protocol verziója, 1.1, 2.1
+
 ### status (200, 404)
+
+- httpstatusdogs.com
+- 200 - successful
+- 404- not found, client side problem
+- 500 - server side error
+
 ### API
 
 API and Web service serve as a means of communication. The only difference is that a Web service facilitates interaction between two machines over a network. An API acts as an interface between two different applications so that they can communicate with each other. An API is a method by which the third-party vendors can write programs that interface easily with other programs.
@@ -14,7 +43,8 @@ API and Web service serve as a means of communication. The only difference is th
 ### REST
 
 REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
-[moar](https://www.codecademy.com/articles/what-is-rest)
+[more](https://www.codecademy.com/articles/what-is-rest)
+
 
 ### AJAX
 
@@ -78,15 +108,29 @@ How data flow between layers.
 ## Testing
 ### model, unit
 
-[Unit test with mocha & chai](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing) 
+[Unit test with mocha & chai](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)<br/>
+unit: w-4 d-4
 
 ### integration, endpoint
+
+endpoint: w-9 d-1
+
 ### end to end
+
+testing whole application, from every perspective
+
 ### Mocking (mock, stub, spy)
+
+[example1](https://javapointers.com/tutorial/difference-between-spy-and-mock-in-mockito/)<br/>
+[example2](https://dzone.com/articles/mockito-mock-vs-spy-in-spring-boot-tests)<br/>
+
 ### assertions
 
 ## DB
 ### ORM
+
+programban lévő objektumok és az DB lévő relációk között hidat képez (összemappeli őket object relation mapping)
+
 ### CRUD
 ### foreign key
 ### SQL syntax
