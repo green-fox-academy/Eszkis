@@ -17,11 +17,31 @@
 
 ## Data flow
 ### layers
+
+
+
 ### service
+
+
+
 ### MVC
+
+Model-View-Controller is a architectural pattern that divides an application into 3 different parts.<br/>
+Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.<br/>
+View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.<br/>
+Controller: Accepts input and converts it to commands for the model or view.
+
 ### joined models
+
+
+
 ### components
+
+
+
 ### communication between layers and components
+
+
 
 ## Testing
 ### model, unit
