@@ -48,10 +48,21 @@ Resolve and reject are functions that return a value.
 ## Data flow
 ### layers
 
-
+- frontend layer<br/>
+- backend layer<br/>
+- database layer<br/>
+- separate layers do separate things<br/>
+- one layer should be responsible only for the necessary things<br/>
+- in a sense MVC is kind of 3 layers<br/>
+- we creating layers by separating our code with the intention of keep the functionality<br/>
+- redux is also a layer<br/>
 
 ### service
 
+- foreign ministry of our application<br/>
+- hides the communicational syntax and the specific code that needs to be used to access data and return that data to the service caller<br/>
+- connection between the different layers (pzl. frontend-backend, backend-database);<br/>
+- different name for functions
 
 
 ### MVC
@@ -63,15 +74,16 @@ Controller: Accepts input and converts it to commands for the model or view.
 
 ### joined models
 
-
+java stuff
 
 ### components
 
-
+java stuff
 
 ### communication between layers and components
 
-
+- state and props<br/>
+- state management frameworks, Redux, Vuex<br/>
 
 ## Testing
 ### model, unit
@@ -250,3 +262,4 @@ Jenkins has many plugins that helps you to deploy your application to many diffe
 If you want to specify the steps, Jenkins should do, you can write a Jenkinsfile for it. If it is writen you can set Jenkins to use this filem to know what it should do.
 
 [Jenkinsfile example end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
+
