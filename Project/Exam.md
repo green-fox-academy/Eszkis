@@ -17,43 +17,47 @@ Usualy used for search. Dinamicly change with every search.
 
 ### body
 
-- req része, abban van az payload maga, amit küldünk
-- Optional to add body to http
-- It contains every other/plus information about the data
+- req része, abban van az payload maga, amit küldünk<br/>
+- Optional to add body to http<br/>
+- It contains every other/plus information about the data<br/>
 
 ### request / response
 
-- request contains the detail what we want to ask from the server, browser sends it to the server, 
-- http method: 
-- URL
-- protocol verziója, 1.1, 2.1
+- request contains the detail what we want to ask from the server, browser sends it to the server, <br/>
+- http method: <br/>
+- URL<br/>
+- protocol verziója, 1.1, 2.1<br/>
 
 ### status (200, 404)
 
-- httpstatusdogs.com
-- 200 - successful
-- 404- not found, client side problem
-- 500 - server side error
+- httpstatusdogs.com<br/>
+- 200 - successful<br/>
+- 404- not found, client side problem<br/>
+- 500 - server side error<br/>
 
 ### API
 
-API and Web service serve as a means of communication. The only difference is that a Web service facilitates interaction between two machines over a network. An API acts as an interface between two different applications so that they can communicate with each other. An API is a method by which the third-party vendors can write programs that interface easily with other programs.
+API and Web service serve as a means of communication. The only difference is that a Web service facilitates interaction between two machines over a network.<br/>
+ An API acts as an interface between two different applications so that they can communicate with each other.<br/>
+  An API is a method by which the third-party vendors can write programs that interface easily with other programs.<br/>
 [moar](https://medium.com/@programmerasi/difference-between-api-and-web-service-73c873573c9d)
 
 ### REST
 
-REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
+REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.<br/>
+ REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.<br/>
 [more](https://www.codecademy.com/articles/what-is-rest)
 
 
 ### AJAX
 
-Asynchronous JavaScript And XML. Browser technology.
-No need to refresh page all the time, send data in the background.
+Asynchronous JavaScript And XML. Browser technology.<br/>
+No need to refresh page all the time, send data in the background.<br/>
 
 ### PROMISE & FETCH
 
-A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason.<br/>
+This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.<br/>
 Resolve and reject are functions that return a value.
 
 [examples](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
