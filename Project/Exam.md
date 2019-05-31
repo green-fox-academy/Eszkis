@@ -86,6 +86,9 @@ How data flow between layers.
 
 ## Testing
 ### model, unit
+
+[Unit test with mocha & chai](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing) 
+
 ### integration, endpoint
 ### end to end
 ### Mocking (mock, stub, spy)
@@ -101,7 +104,44 @@ How data flow between layers.
 #### New specific query from database
 #### Creating one-to-many, many-to-many connections
 #### Basic SQL commands in terminal
+
+[Basic SQL commands in terminal](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/shell.txt)
+
 #### Cascading deletion for connected records
+
+```
+CREATE TABLE buildings (
+    building_no INT PRIMARY KEY AUTO_INCREMENT,
+    building_name VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE rooms (
+    room_no INT PRIMARY KEY AUTO_INCREMENT,
+    room_name VARCHAR(255) NOT NULL,
+    building_no INT NOT NULL,
+    FOREIGN KEY (building_no)
+        REFERENCES buildings (building_no)
+        ON DELETE CASCADE
+);
+```
+
+#### Normal forms
+
+first
+foreign key is used to reference tables -> no repeating
+
+second
+intersection tables are used (relational tables)
+
+third
+All the non-prime attributes must depend on the primary key only.
+
+#### Other snippets
+[exercises](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/sql-exercises.txt)
+[GFA cheatsheet](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/mysqlcheatsheet.pdf)
+[Adam's stuff](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/cheatsheet.txt)
+
 
 ## Container
 ### Create image using Dockerfile
@@ -260,5 +300,4 @@ Jenkins has many plugins that helps you to deploy your application to many diffe
 
 If you want to specify the steps, Jenkins should do, you can write a Jenkinsfile for it. If it is writen you can set Jenkins to use this filem to know what it should do.
 
-[Jenkinsfile example end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
-
+[Jenkinsfile example in end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
