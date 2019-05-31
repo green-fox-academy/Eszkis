@@ -82,8 +82,7 @@ java stuff
 
 ### communication between layers and components
 
-- state and props<br/>
-- state management frameworks, Redux, Vuex<br/>
+How data flow between layers. 
 
 ## Testing
 ### model, unit
