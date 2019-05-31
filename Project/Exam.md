@@ -17,17 +17,46 @@
 
 ## Data flow
 ### layers
+
+- frontend layer<br/>
+- backend layer<br/>
+- database layer<br/>
+- separate layers do separate things<br/>
+- one layer should be responsible only for the necessary things<br/>
+- in a sense MVC is kind of 3 layers<br/>
+- we creating layers by separating our code with the intention of keep the functionality<br/>
+- redux is also a layer<br/>
+
 ### service
+
+- foreign ministry of our application<br/>
+- hides the communicational syntax and the specific code that needs to be used to access data and return that data to the service caller<br/>
+- connection between the different layers (pzl. frontend-backend, backend-database);<br/>
+- different name for functions
+
+
 ### MVC
+
+Model-View-Controller is a architectural pattern that divides an application into 3 different parts.<br/>
+Model: The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.<br/>
+View: Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.<br/>
+Controller: Accepts input and converts it to commands for the model or view.
+
 ### joined models
+
+java stuff
+
 ### components
+
+java stuff
+
 ### communication between layers and components
+
+- state and props<br/>
+- state management frameworks, Redux, Vuex<br/>
 
 ## Testing
 ### model, unit
-
-[Unit test with mocha & chai](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)
-
 ### integration, endpoint
 ### end to end
 ### Mocking (mock, stub, spy)
@@ -42,43 +71,8 @@
 ### Examples:
 #### New specific query from database
 #### Creating one-to-many, many-to-many connections
-#### [Basic SQL commands in terminal](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/shell.txt)
+#### Basic SQL commands in terminal
 #### Cascading deletion for connected records
-
-
-```
-CREATE TABLE buildings (
-    building_no INT PRIMARY KEY AUTO_INCREMENT,
-    building_name VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE rooms (
-    room_no INT PRIMARY KEY AUTO_INCREMENT,
-    room_name VARCHAR(255) NOT NULL,
-    building_no INT NOT NULL,
-    FOREIGN KEY (building_no)
-        REFERENCES buildings (building_no)
-        ON DELETE CASCADE
-);
-```
-
-#### Normal forms
-
-first
-foreign key is used to reference tables -> no repeating
-
-second
-intersection tables are used (relational tables)
-
-third
-All the non-prime attributes must depend on the primary key only.
-
-#### Other snippets
-[exercises](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/sql-exercises.txt)
-[GFA cheatsheet](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/mysqlcheatsheet.pdf)
-[Adam's stuff](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/cheatsheet.txt)
-
 
 ## Container
 ### Create image using Dockerfile
@@ -237,4 +231,4 @@ Jenkins has many plugins that helps you to deploy your application to many diffe
 
 If you want to specify the steps, Jenkins should do, you can write a Jenkinsfile for it. If it is writen you can set Jenkins to use this filem to know what it should do.
 
-[Jenkinsfile example end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
+[Jenkinsfile example in end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
