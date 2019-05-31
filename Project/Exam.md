@@ -6,7 +6,36 @@
 ### body
 ### request / response
 ### status (200, 404)
+### API
+
+
+API and Web service serve as a means of communication. The only difference is that a Web service facilitates interaction between two machines over a network. An API acts as an interface between two different applications so that they can communicate with each other. An API is a method by which the third-party vendors can write programs that interface easily with other programs.
+[moar](https://medium.com/@programmerasi/difference-between-api-and-web-service-73c873573c9d)
+
+
 ### REST
+
+
+REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
+[moar](https://www.codecademy.com/articles/what-is-rest)
+
+
+### AJAX
+
+
+Asynchronous JavaScript And XML. Browser technology.
+No need to refresh page all the time, send data in the background.
+
+
+### PROMISE & FETCH
+
+
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+Resolve and reject are functions that return a value.
+
+[examples](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
+
+
 ### HTTP, HTTPS
 ### parts of URL
 ### Examples:
@@ -14,6 +43,7 @@
 #### GET/POST/PUT * endpoint call or implementation or refactor
 #### Modify status of an endpoint
 #### Add error handling to an endpoint
+
 
 ## Data flow
 ### layers
@@ -231,4 +261,5 @@ Jenkins has many plugins that helps you to deploy your application to many diffe
 
 If you want to specify the steps, Jenkins should do, you can write a Jenkinsfile for it. If it is writen you can set Jenkins to use this filem to know what it should do.
 
-[Jenkinsfile example in end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
+[Jenkinsfile example end of the document](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Continuos%20Delivery.md)
+
