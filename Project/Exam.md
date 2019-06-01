@@ -63,20 +63,43 @@ Resolve and reject are functions that return a value.
 [examples](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
 
 ### HTTP, HTTPS
+
+ HTTP: basic protocol for computers to communicate through internet.
+ HTTPS: secured way for computers to communicate through internet. Information is coded in one end, and only decoded on the other end
+
 ### parts of URL
+
+Example: <br/>
+https://www.google.com/search?food=potato<br/>
+  - https= protocol type<br/>
+  - www.google.com= URL, that is hide a IP address. It is for a specific server somewhere on earth.<br/>
+  - /search= endpoint<br/>
+  - ?food=potato= search parameter<br/>
+
 ### Examples:
 #### Download pdf endpoint
+
+It is a GET request for the endpoint, which returns the requested PDF. GET header or body contains the information about the PDF.
+
 #### GET/POST/PUT * endpoint call or implementation or refactor
+
+[example backend with different endpoint](https://github.com/green-fox-academy/Eszkis/blob/master/Project/Sprint-0/Day-4/server.js)
+
 #### Modify status of an endpoint
+
+```response.status(500).send()```
+
 #### Add error handling to an endpoint
+
+Example: it there is no data or information in the request body or header send error message.
 
 ## Data flow
 ### layers
 
 - frontend layer<br/>
-- backend layer<br/>
-- database layer<br/>
-- separate layers do separate things<br/>
+- - backend layer<br/>
+- - database layer<br/>
+- - separate layers do separate things<br/>
 - one layer should be responsible only for the necessary things<br/>
 - in a sense MVC is kind of 3 layers<br/>
 - we creating layers by separating our code with the intention of keep the functionality<br/>
@@ -136,12 +159,54 @@ testing whole application, from every perspective
 programban lévő objektumok és az DB lévő relációk között hidat képez (összemappeli őket object relation mapping)
 
 ### CRUD
+
+C= create data in table <br/>
+R= read data in table <br/>
+U= update data in table <br/>
+D= delete data in table <br/>
+
 ### foreign key
+
+A table's foreign key, is another table's primary key. It is help the user to connect to table together.
+
 ### SQL syntax
+
+```INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...), (value1, value2, value3, ...);```<br/>
+```SELECT * FROM table_name```<br/>
+```UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;```<br/>
+```DELETE FROM talbe_name WHERE condition;```
+
 ### join
+
+Table1: Owner_id, name, address<br/> 
+table2: Order_id, owner_id, product_name<br/>
+
+```
+SELECT Owner_id,
+name,
+address,
+product_name 
+FROM table1 t1 LEFT JOIN table2 t2 ON t1.Owner_id=t2.owner_id;
+```
+
 ### Examples:
 #### New specific query from database
+
+Same like in SQL syntax
+
 #### Creating one-to-many, many-to-many connections
+
+one-to-many:<br/>
+  - table1: client's address, name, etc<br/>
+  - table2: order_id, product_name<br/>
+One client can order many product, but one product only belogs to one client.
+
+many-to-many:<br/>
+  - table1: students_id, name, grade<br/>
+  - table2: class_id, class_name, location<br/>
+  - table3: students_id, class_id<br/>
+One student attend at many class, and one class is for many students.
+
 #### Basic SQL commands in terminal
 
 [Basic SQL commands in terminal](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/shell.txt)
