@@ -140,6 +140,10 @@ unit: w-4 d-4
 
 ### integration, endpoint
 
+[Márk tesztje](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing/tape_supertest_endpoint)
+
+[mocha+chai example](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)
+
 endpoint: w-9 d-1
 
 ### end to end
@@ -248,6 +252,10 @@ All the non-prime attributes must depend on the primary key only.
 
 
 ## Container
+
+[commands](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/Docker/commands.txt)
+[snippets](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/Docker)
+
 ### Create image using Dockerfile
 
 To create a Docker image you need a docker file. If you want to create a container with your own server, you need the files in the same folder as your Docker file, or a Repository. 
