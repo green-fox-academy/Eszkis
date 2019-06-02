@@ -65,7 +65,7 @@ Resolve and reject are functions that return a value.
 
 ### HTTP, HTTPS
 
- HTTP: basic protocol for computers to communicate through internet.
+ HTTP: basic protocol for computers to communicate through internet.<br/>
  HTTPS: secured way for computers to communicate through internet. Information is coded in one end, and only decoded on the other end
 
 ### parts of URL
