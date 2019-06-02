@@ -3,7 +3,7 @@
 ## Endpoint
 ### params
 
-Usualy used for search. Dinamicly change with every search.
+Used to send information, or data to endpoint. Usualy used for search. Dinamicly change with every endpoint call.
 
 ### header
 
@@ -32,20 +32,21 @@ Usualy used for search. Dinamicly change with every search.
 
 - httpstatusdogs.com<br/>
 - 200 - successful<br/>
-- 404- not found, client side problem<br/>
-- 500 - server side error<br/>
+- 3xx - redirect<br/>
+- 404 - not found, client side problem<br/>
+- 5xx - server side error<br/>
 
 ### API
 
 API and Web service serve as a means of communication. The only difference is that a Web service facilitates interaction between two machines over a network.<br/>
- An API acts as an interface between two different applications so that they can communicate with each other.<br/>
-  An API is a method by which the third-party vendors can write programs that interface easily with other programs.<br/>
-[moar](https://medium.com/@programmerasi/difference-between-api-and-web-service-73c873573c9d)
+An API acts as an interface between two different applications so that they can communicate with each other.<br/>
+An API is a method by which the third-party vendors can write programs that interface easily with other programs.<br/>
+[more](https://medium.com/@programmerasi/difference-between-api-and-web-service-73c873573c9d)
 
 ### REST
 
 REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other.<br/>
- REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.<br/>
+REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.<br/>
 [more](https://www.codecademy.com/articles/what-is-rest)
 
 
@@ -97,9 +98,9 @@ Example: it there is no data or information in the request body or header send e
 ### layers
 
 - frontend layer<br/>
-- - backend layer<br/>
-- - database layer<br/>
-- - separate layers do separate things<br/>
+- backend layer<br/>
+- database layer<br/>
+- separate layers do separate things<br/>
 - one layer should be responsible only for the necessary things<br/>
 - in a sense MVC is kind of 3 layers<br/>
 - we creating layers by separating our code with the intention of keep the functionality<br/>
@@ -136,15 +137,13 @@ How data flow between layers.
 ### model, unit
 
 [Unit test with mocha & chai](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)<br/>
-unit: w-4 d-4
+[unit: w-4 d-4](https://github.com/green-fox-academy/Eszkis/tree/master/Week-04/Day-4)
 
 ### integration, endpoint
 
-[Márk tesztje](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing/tape_supertest_endpoint)
-
-[mocha+chai example](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)
-
-endpoint: w-9 d-1
+[Márk tesztje](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing/tape_supertest_endpoint)<br/>
+[mocha+chai example](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/testing)<br/>
+[endpoint: w-9 d-1](https://github.com/green-fox-academy/Eszkis/tree/master/Week-09/Day-1)
 
 ### end to end
 
@@ -153,14 +152,14 @@ testing whole application, from every perspective
 ### Mocking (mock, stub, spy)
 
 [example1](https://javapointers.com/tutorial/difference-between-spy-and-mock-in-mockito/)<br/>
-[example2](https://dzone.com/articles/mockito-mock-vs-spy-in-spring-boot-tests)<br/>
+[example2](https://dzone.com/articles/mockito-mock-vs-spy-in-spring-boot-tests)
 
 ### assertions
 
 ## DB
 ### ORM
 
-programban lévő objektumok és az DB lévő relációk között hidat képez (összemappeli őket object relation mapping)
+programban lévő objektumok és az DB lévő relációk között hidat képez (összemappeli őket "object relation mapping")
 
 ### CRUD
 
@@ -246,14 +245,14 @@ third
 All the non-prime attributes must depend on the primary key only.
 
 #### Other snippets
-[exercises](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/sql-exercises.txt)
-[GFA cheatsheet](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/mysqlcheatsheet.pdf)
+[exercises](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/sql-exercises.txt)<br/>
+[GFA cheatsheet](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/mysqlcheatsheet.pdf)<br/>
 [Adam's stuff](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/SQL/cheatsheet.txt)
 
 
 ## Container
 
-[commands](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/Docker/commands.txt)
+[commands](https://github.com/green-fox-academy/adambhun/blob/master/cheatsheet/Docker/commands.txt)<br/>
 [snippets](https://github.com/green-fox-academy/adambhun/tree/master/cheatsheet/Docker)
 
 ### Create image using Dockerfile
