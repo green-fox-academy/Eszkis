@@ -13,6 +13,11 @@ Now my first java code is running and write out the correct message.
 ## Task 2.: Compile code using Maven
 
 Never used Maven before, so I checked what is it, and how to use it. I found a [webpage](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) about Maven. It show me how to set it up, and how start your first project.<br/>
-First I installed Maven to my computer. I have linux Mint on my computer, so I used a console command to install it.
+First I installed Maven to my computer. I have linux Mint on my computer, so I used a console command to install it. I followed the website steps, and managed to set up my first Maven project. I changed to application code, to print out what I wanted. After every step my application works as I wanted.
 
-16:15-
+## Task 3.: Set up GitLab useing Maven.
+
+
+
+## Time:
+  - 16:15-17:22: Task 1-2<br/>
