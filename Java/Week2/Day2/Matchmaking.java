@@ -32,7 +32,7 @@ public class Matchmaking {
     } else {
       for (int i = 0; i < Girls.size(); i++) {
         paired.add(Girls.get(i));
-        paired.add(Boys.get(i));
+        paired.add(Boys.get(i));data1
       }
     }
     return paired;
