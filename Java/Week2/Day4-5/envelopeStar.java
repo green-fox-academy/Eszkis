@@ -4,16 +4,20 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class linePlay {
+public class envelopeStar {
   public static void mainDraw(Graphics graphics) {
-    int pixel = 16;
+    int pixel = 10;
+    int quater = 4;
+    int stepsize = (int) (320 / Math.sqrt(quater));
+    System.out.println(stepsize);
+    System.out.println((int) Math.sqrt(quater));
+
     graphics.setColor(Color.RED);
-    for (int i = 0; i < 320; i++) {
-      graphics.drawLine(0 + i * pixel, 0, 320, 0 + i * pixel);
-    }
-    graphics.setColor(Color.BLUE);
-    for (int i = 0; i < 320; i++) {
-      graphics.drawLine(0 + i * pixel, 320, 0, 0 + i * pixel);
+    for (int i = 0; i <= stepsize / pixel; i++) {
+      graphics.drawLine(i * pixel, stepsize, stepsize, stepsize + i * pixel);
+      graphics.drawLine(stepsize, i * pixel, stepsize + i * pixel, stepsize);
+      graphics.drawLine(stepsize, i * pixel, stepsize - i * pixel, stepsize);
+      graphics.drawLine(stepsize, 2 * stepsize - i * pixel, stepsize + i * pixel, stepsize);
     }
   }
 
