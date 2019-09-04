@@ -25,10 +25,10 @@ public class Births {
 
   public static String mostBirth(Path filePath) {
     String answer = "";
-    HashMap<Integer, Integer> birthCount = new HashMap<>();
+    HashMap<String, Integer> birthCount = new HashMap<>();
     String[] content = new String[100];
     for (int i = 1960; i < 2018; i++) {
-      birthCount.put(i, 0);
+      birthCount.put(String.valueOf(i), 0);
     }
     try {
       content = Files.readAllLines(filePath).toString().split(",");
@@ -36,9 +36,21 @@ public class Births {
       System.out.println("Can't read file!");
     }
     for (String var : content) {
-//      System.out.println((int) Integer.parseInt(var.split(";")[1].substring(0, 4)));
-      birthCount.get((int) Integer.parseInt(var.split(";")[1].substring(0, 4)));
+      birthCount.replace(var.split(";")[1].substring(0, 4), 1 + birthCount.get(var.split(";")[1].substring(0, 4)));
     }
-    return birthCount.toString();
+    answer = findMax(birthCount);
+    return answer;
+  }
+
+  public static String findMax(HashMap dataInput) {
+    String date = "";
+    Integer max = 0;
+    for (Object key : dataInput.keySet()) {
+      if (dataInput.get(key).hashCode() > max) {
+        date = key.toString();
+        max = dataInput.get(key).hashCode();
+      }
+    }
+    return date;
   }
 }
